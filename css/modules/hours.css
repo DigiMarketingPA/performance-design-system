@@ -1,0 +1,64 @@
+/* hours.css — Tier 3 module. Load after pa-core.css + brand sheet. */
+
+.pa-root .pa-hours-bar {
+  color: var(--pa-button-text);
+  background: var(--pa-primary);
+  letter-spacing: 0.02em;
+  padding: 0.75rem var(--pa-gutter, 1.25rem);
+  text-align: center;
+  border-radius: var(--pa-radius);
+  max-width: var(--pa-container);
+  margin: 1.25rem auto;
+}
+
+.pa-root .pa-hours-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.pa-root .pa-hours-bar a,
+.pa-root a.pa-hours-bar-link {
+  color: var(--pa-button-text);
+  text-decoration: underline;
+}
+
+.pa-root .pa-hours-bar a:hover,
+.pa-root .pa-hours-bar a:focus,
+.pa-root a.pa-hours-bar-link:hover,
+.pa-root a.pa-hours-bar-link:focus {
+  color: var(--pa-button-text);
+  text-decoration: none;
+}
+
+.pa-root .pa-hours {
+  text-align: center;
+}
+
+.pa-root .pa-hours ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 0;
+}
+
+.pa-root .pa-hours li {
+  display: inline;
+  color: inherit;
+}
+
+.pa-root .pa-hours li:not(:last-child)::after {
+  content: "|";
+  padding: 0 0.4em;
+  color: var(--pa-muted);
+}
+
+.pa-root .pa-hours-label {
+  font-weight: 700;
+  margin-right: 0.35em;
+}

@@ -1,0 +1,138 @@
+/* coupons.css — Tier 3 module. Load after pa-core.css + brand sheet. */
+
+.pa-root .pa-coupon-grid {
+  display: grid;
+  gap: var(--pa-gap, 1.5rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .pa-root .pa-coupon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 62rem) {
+  .pa-root .pa-coupon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pa-root .pa-coupon {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 1.35rem 1.35rem;
+  background: var(--pa-card-bg);
+  border: 0.125rem dashed var(--pa-border);
+  border-radius: var(--pa-radius);
+  box-shadow: var(--pa-shadow);
+  text-align: center;
+}
+
+.pa-root .pa-coupon-badge {
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.35rem 0.85rem;
+  min-height: 2rem;
+  border-radius: var(--pa-radius);
+  background: var(--pa-primary);
+  color: var(--pa-button-text);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.pa-root .pa-coupon-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: inherit;
+}
+
+.pa-root .pa-coupon-expires {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--pa-primary);
+}
+
+.pa-root .pa-coupon-disclaimer {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--pa-muted);
+}
+
+.pa-root .pa-coupon-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+/* CTA paint/hover: defer to pa-core (.pa-root .pa-btn, a.pa-btn, button.pa-btn). */
+.pa-root .pa-coupon-actions > .pa-btn,
+.pa-root .pa-coupon-actions > a.pa-btn,
+.pa-root .pa-coupon-actions > button.pa-btn {
+  flex: 1 1 auto;
+  min-width: 8rem;
+}
+
+/* Print: isolate coupon; hide site chrome */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  .pa-root,
+  .pa-root .pa-coupon,
+  .pa-root .pa-coupon * {
+    visibility: visible !important;
+  }
+
+  .pa-root {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background: var(--pa-card-bg);
+  }
+
+  .pa-root .pa-coupon-grid {
+    display: block;
+  }
+
+  .pa-root .pa-coupon {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none;
+    margin: 0 auto 1rem;
+    max-width: 24rem;
+  }
+
+  /* Hide only print buttons during print execution */
+  .pa-root .pa-coupon-actions button.pa-btn {
+    display: none !important;
+  }
+
+  .pa-root header,
+  .pa-root footer,
+  .pa-root nav,
+  header,
+  footer,
+  nav,
+  .site-header,
+  .site-footer,
+  #header,
+  #footer {
+    display: none !important;
+  }
+}

@@ -1,0 +1,121 @@
+/* content-media.css — Tier 3 module. Load after pa-core.css + brand sheet. */
+
+.pa-root .pa-content-media {
+  align-items: center;
+}
+
+.pa-root .pa-content-media-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pa-root .pa-content-media-eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pa-primary);
+}
+
+.pa-root .pa-content-media-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.pa-root .pa-content-media-body {
+  margin: 0;
+  line-height: var(--pa-leading, 1.5);
+  color: inherit;
+}
+
+.pa-root .pa-content-media-body.pa-muted,
+.pa-root .pa-content-media-copy .pa-muted {
+  color: var(--pa-muted);
+}
+
+.pa-root .pa-content-media-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* CTA paint/hover: defer to pa-core (.pa-root .pa-btn, a.pa-btn, button.pa-btn). */
+.pa-root .pa-content-media-actions > .pa-btn,
+.pa-root .pa-content-media-actions > a.pa-btn,
+.pa-root .pa-content-media-actions > button.pa-btn {
+  flex: 0 1 auto;
+}
+
+.pa-root .pa-content-media-media {
+  margin: 0;
+  border-radius: var(--pa-radius);
+  overflow: hidden;
+  background: var(--pa-surface-alt, var(--pa-surface));
+}
+
+.pa-root .pa-content-media-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+/* Desktop: swap columns when reverse modifier is present */
+@media (min-width: 48rem) {
+  .pa-root .pa-content-media--reverse > .pa-content-media-copy {
+    order: 2;
+  }
+
+  .pa-root .pa-content-media--reverse > .pa-content-media-media {
+    order: 1;
+  }
+}
+
+/* Checklist */
+.pa-root .pa-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: left;
+}
+
+.pa-root .pa-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0;
+  line-height: 1.4;
+  color: inherit;
+}
+
+.pa-root .pa-checklist-icon {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.15em;
+  border-radius: 50%;
+  background: var(--pa-primary);
+  display: inline-grid;
+  place-items: center;
+  line-height: 0;
+}
+
+.pa-root .pa-checklist-icon::after {
+  content: "";
+  width: 0.28rem;
+  height: 0.5rem;
+  margin-top: -0.1rem;
+  border-right: 0.125rem solid var(--pa-button-text, var(--pa-surface));
+  border-bottom: 0.125rem solid var(--pa-button-text, var(--pa-surface));
+  transform: rotate(45deg);
+}

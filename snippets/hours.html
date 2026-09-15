@@ -1,0 +1,27 @@
+<!-- Hours Bar + Hours Display
+     Requires: css/pa-core.css + css/brands/pa-brand-{oem}.css + css/modules/hours.css -->
+<div class="pa-root">
+  <div class="pa-hours-bar">
+    <div class="pa-hours-bar-inner">
+      <span>[di_display_open_hours departments="Service"]</span>
+      <span>Call us at: <strong><a class="pa-hours-bar-link" href="tel:5555555555">(555) 555-5555</a></strong></span>
+    </div>
+  </div>
+
+  <div class="pa-container">
+    <div class="pa-hours">
+      <ul>
+        <li><span class="pa-hours-label">Sales:</span> Mon - Sat 9:00 AM - 9:00 PM</li>
+        <li>Sun Closed</li>
+      </ul>
+    </div>
+    <div class="pa-hours">
+      <ul>
+        <li><span class="pa-hours-label">Service:</span> Mon - Fri 7:00 AM - 6:00 PM</li>
+        <li>Sat 8:00 AM - 5:00 PM</li>
+        <li>Sun Closed</li>
+      </ul>
+    </div>
+    <!-- Live: [di_hours department="Sales"] / [di_hours department="Service & Parts"] -->
+  </div>
+</div>

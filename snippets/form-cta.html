@@ -1,0 +1,32 @@
+<!-- Form CTA
+     Requires: css/pa-core.css + css/brands/pa-brand-{oem}.css + css/modules/form-cta.css
+     Swap the placeholder <form> for a Gravity Form shortcode when live. -->
+<div class="pa-root" id="form">
+  <div class="pa-container">
+    <div class="pa-form-cta">
+      <h2 class="pa-form-cta-title">Lorem Ipsum Contact Form</h2>
+      <p class="pa-lead">Call <a href="tel:5555555555"><strong>(555) 555-5555</strong></a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- Live: [gravityform id="3" title="false" description="false"] -->
+      <form class="pa-form" action="#" method="post">
+        <div>
+          <label for="pa-form-name">Name</label>
+          <input id="pa-form-name" name="name" type="text" placeholder="Lorem Ipsum" autocomplete="name">
+        </div>
+        <div>
+          <label for="pa-form-email">Email</label>
+          <input id="pa-form-email" name="email" type="email" placeholder="lorem@ipsum.com" autocomplete="email">
+        </div>
+        <div>
+          <label for="pa-form-phone">Phone</label>
+          <input id="pa-form-phone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel">
+        </div>
+        <div>
+          <label for="pa-form-message">Message</label>
+          <textarea id="pa-form-message" name="message" placeholder="Lorem ipsum dolor sit amet…"></textarea>
+        </div>
+        <button class="pa-btn pa-btn--primary" type="submit">Submit</button>
+      </form>
+      <p class="pa-form-note">*Lorem ipsum dolor sit amet. See dealer for details.</p>
+    </div>
+  </div>
+</div>

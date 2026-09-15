@@ -1,0 +1,29 @@
+/* cta-row.css — Tier 3 module. Load after pa-core.css + brand sheet. */
+
+.pa-root .pa-cta-row {
+  display: grid;
+  gap: var(--pa-gap, 1.5rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .pa-root .pa-cta-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pa-root .pa-cta-row--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 36rem) and (max-width: 47.9375rem) {
+  .pa-root .pa-cta-row--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pa-root .pa-cta-row > .pa-btn,
+.pa-root .pa-cta-row > a.pa-btn,
+.pa-root .pa-cta-row > button.pa-btn {
+  width: 100%;
+}

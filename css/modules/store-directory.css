@@ -1,0 +1,79 @@
+/* store-directory.css — Tier 3 module. Load after pa-core.css + brand sheet.
+   Pair with js/store-directory.js (Footer / Custom JS — raw JS, no <script> wrapper). */
+
+.pa-root .pa-store {
+  cursor: pointer;
+  text-align: center;
+}
+
+.pa-root .pa-store:focus-visible {
+  outline: 0.125rem solid var(--pa-primary);
+  outline-offset: 0.125rem;
+}
+
+.pa-root .pa-store-logo {
+  max-height: 7.5rem;
+  width: auto;
+  margin: 0 auto 0.75rem;
+  object-fit: contain;
+}
+
+.pa-root .pa-store .pa-btn,
+.pa-root .pa-store a.pa-btn,
+.pa-root .pa-store span.pa-btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.pa-root .pa-modal {
+  display: none;
+  position: fixed;
+  z-index: 1055;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.pa-root .pa-modal.pa-open {
+  display: flex;
+}
+
+.pa-root .pa-modal-dialog {
+  position: relative;
+  background: var(--pa-card-bg);
+  padding: 2rem;
+  border-radius: var(--pa-radius);
+  border: 0.0625rem solid var(--pa-border);
+  max-width: 37.5rem;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--pa-shadow);
+  text-align: center;
+}
+
+.pa-root .pa-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 2rem;
+  line-height: 1;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--pa-muted);
+  padding: 0.25rem 0.5rem;
+}
+
+.pa-root .pa-modal-close:hover,
+.pa-root .pa-modal-close:focus-visible {
+  color: var(--pa-primary);
+}
+
+.pa-root .pa-modal-dialog .pa-btn,
+.pa-root .pa-modal-dialog a.pa-btn {
+  width: 100%;
+  margin-top: 0.75rem;
+}
