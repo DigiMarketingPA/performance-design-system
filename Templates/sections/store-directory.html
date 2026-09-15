@@ -1,0 +1,199 @@
+<!-- Store Directory start -->
+<!-- Requires: css/tpl.css + css/tpl-{brand}.css in Head/Header. -->
+<div class="tpl-root">
+  <div class="tpl-section">
+    <div class="tpl-container">
+      <h2 class="tpl-center tpl-headline-lined">Our Stores</h2>
+      <div class="tpl-row tpl-row--3 tpl-mt">
+        <div class="tpl-card tpl-store" data-tpl-modal="strdir-modal-1">
+          <div class="tpl-card-body">
+            <img class="tpl-store-logo" src="https://placehold.co/400x140/e2e8f0/64748b?text=Store+Logo+1" alt="Store logo placeholder">
+            <p class="tpl-mb-0">1234 Placeholder Ave<br>City, ST 00000</p>
+            <p class="tpl-mb-0">(555) 555-1111</p>
+            <span class="button button--primary button--normal">View Additional Information</span>
+          </div>
+        </div>
+
+        <div class="tpl-card tpl-store" data-tpl-modal="strdir-modal-2">
+          <div class="tpl-card-body">
+            <img class="tpl-store-logo" src="https://placehold.co/400x140/e2e8f0/64748b?text=Store+Logo+2" alt="Store logo placeholder">
+            <p class="tpl-mb-0">5678 Example Blvd<br>City, ST 00000</p>
+            <p class="tpl-mb-0">(555) 555-2222</p>
+            <span class="button button--primary button--normal">View Additional Information</span>
+          </div>
+        </div>
+
+        <div class="tpl-card tpl-store" data-tpl-modal="strdir-modal-3">
+          <div class="tpl-card-body">
+            <img class="tpl-store-logo" src="https://placehold.co/400x140/e2e8f0/64748b?text=Store+Logo+3" alt="Store logo placeholder">
+            <p class="tpl-mb-0">9101 Lorem Street<br>City, ST 00000</p>
+            <p class="tpl-mb-0">(555) 555-3333</p>
+            <span class="button button--primary button--normal">View Additional Information</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tpl-modal" id="strdir-modal-1">
+    <div class="tpl-modal-dialog">
+      <button class="tpl-modal-close" type="button" aria-label="Close">&times;</button>
+      <img class="tpl-store-logo" src="https://placehold.co/400x140/e2e8f0/64748b?text=Store+Logo+1" alt="Store logo placeholder">
+      <p><strong>Address:</strong> 1234 Placeholder Ave, City, ST 00000</p>
+      <p><strong>Phone:</strong> (555) 555-1111</p>
+      <p><strong>Hours:</strong> Mon–Sat 9AM–8PM | Sun Closed</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a class="button button--primary button--normal" href="#">Visit Website</a>
+    </div>
+  </div>
+
+  <div class="tpl-modal" id="strdir-modal-2">
+    <div class="tpl-modal-dialog">
+      <button class="tpl-modal-close" type="button" aria-label="Close">&times;</button>
+      <img class="tpl-store-logo" src="https://placehold.co/400x140/e2e8f0/64748b?text=Store+Logo+2" alt="Store logo placeholder">
+      <p><strong>Address:</strong> 5678 Example Blvd, City, ST 00000</p>
+      <p><strong>Phone:</strong> (555) 555-2222</p>
+      <p><strong>Hours:</strong> Mon–Sat 9AM–8PM | Sun Closed</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <a class="button button--primary button--normal" href="#">Visit Website</a>
+    </div>
+  </div>
+
+  <div class="tpl-modal" id="strdir-modal-3">
+    <div class="tpl-modal-dialog">
+      <button class="tpl-modal-close" type="button" aria-label="Close">&times;</button>
+      <img class="tpl-store-logo" src="https://placehold.co/400x140/e2e8f0/64748b?text=Store+Logo+3" alt="Store logo placeholder">
+      <p><strong>Address:</strong> 9101 Lorem Street, City, ST 00000</p>
+      <p><strong>Phone:</strong> (555) 555-3333</p>
+      <p><strong>Hours:</strong> Mon–Sat 9AM–8PM | Sun Closed</p>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <a class="button button--primary button--normal" href="#">Visit Website</a>
+    </div>
+  </div>
+
+</div>
+<!-- Store Directory end -->
+
+<!-- Page JS: paste with this section. Skip if tpl.js is already on the page. -->
+<script data-cfasync="false">
+// Section Template Library — FAQ, store modals, deal carousel
+// Included at the bottom of faq / store-directory / deal-layout section HTML.
+// data-cfasync="false" on the <script> tag keeps Cloudflare Rocket Loader off this block.
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.__tplJsInit) return;
+  window.__tplJsInit = true;
+
+  // FAQ
+  var faqItems = document.querySelectorAll(".tpl-faq-item");
+
+  faqItems.forEach(function (faqItem) {
+    var faqHeader = faqItem.querySelector(".tpl-faq-q");
+    if (!faqHeader) return;
+
+    faqHeader.addEventListener("click", function () {
+      faqItem.classList.toggle("tpl-open");
+
+      faqItems.forEach(function (otherItem) {
+        if (otherItem !== faqItem) {
+          otherItem.classList.remove("tpl-open");
+        }
+      });
+    });
+  });
+
+  // Store modals
+  var storeCards = document.querySelectorAll(".tpl-store[data-tpl-modal]");
+  var storeModals = document.querySelectorAll(".tpl-modal");
+  var closeButtons = document.querySelectorAll(".tpl-modal-close");
+
+  storeCards.forEach(function (card) {
+    card.addEventListener("click", function (e) {
+      var modalId = card.getAttribute("data-tpl-modal");
+      if (!modalId) return;
+      e.preventDefault();
+      var modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add("tpl-open");
+        document.body.style.overflow = "hidden";
+      }
+    });
+  });
+
+  closeButtons.forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var modal = button.closest(".tpl-modal");
+      if (modal) {
+        modal.classList.remove("tpl-open");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  storeModals.forEach(function (modal) {
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.classList.remove("tpl-open");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      storeModals.forEach(function (modal) {
+        if (modal.classList.contains("tpl-open")) {
+          modal.classList.remove("tpl-open");
+          document.body.style.overflow = "";
+        }
+      });
+    }
+  });
+
+  // Deal carousel — scroll by ~3 cards (matches thank-you page)
+  document.querySelectorAll(".tpl-carousel").forEach(function (carousel) {
+    var track = carousel.querySelector(".tpl-carousel-track");
+    var prev = carousel.querySelector(".tpl-carousel-prev");
+    var next = carousel.querySelector(".tpl-carousel-next");
+    if (!track) return;
+
+    var gapPx = 24;
+
+    function firstCard() {
+      return (
+        track.querySelector(".tpl-vcard") ||
+        track.querySelector(".result-wrap") ||
+        null
+      );
+    }
+
+    function getScrollStep() {
+      var card = firstCard();
+      if (card) {
+        return card.getBoundingClientRect().width * 3 + gapPx * 2;
+      }
+      return track.clientWidth || 900;
+    }
+
+    function updateArrows() {
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      if (prev) prev.disabled = track.scrollLeft <= 0;
+      if (next) next.disabled = maxScroll <= 0 || track.scrollLeft >= maxScroll - 1;
+    }
+
+    function move(dir) {
+      track.scrollBy({ left: getScrollStep() * dir, behavior: "smooth" });
+    }
+
+    if (prev) prev.addEventListener("click", function () { move(-1); });
+    if (next) next.addEventListener("click", function () { move(1); });
+    track.addEventListener("scroll", updateArrows);
+    if (typeof ResizeObserver !== "undefined") {
+      new ResizeObserver(updateArrows).observe(track);
+    }
+    updateArrows();
+  });
+});
+</script>

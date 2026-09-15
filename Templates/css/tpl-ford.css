@@ -1,0 +1,11 @@
+/* Ford — load AFTER tpl.css */
+.tpl-root {
+  --tpl-primary: #0f426b;
+  --tpl-primary-hover: #0a468d;
+  --tpl-button: #0d65bf;
+  --tpl-button-hover: #0b55a6;
+  --tpl-link: #00142e;
+  --tpl-link-hover: #00095b;
+  --tpl-secondary: #f5f5f5;
+  --tpl-alt: #000000;
+}

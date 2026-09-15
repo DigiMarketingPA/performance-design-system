@@ -1,0 +1,12 @@
+/* Toyota — load AFTER tpl.css */
+.tpl-root {
+  --tpl-primary: #eb0a1e;
+  --tpl-primary-hover: #a22321;
+  --tpl-button: #eb0a1e;
+  --tpl-button-hover: #a22321;
+  --tpl-link: #eb0a1e;
+  --tpl-link-hover: #a22321;
+  --tpl-secondary: #f2f2f2;
+  --tpl-alt: #000000;
+  --tpl-loc-title: #6b0510;
+}

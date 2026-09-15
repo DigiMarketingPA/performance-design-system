@@ -1,0 +1,91 @@
+<style>
+    .wkhrs1,
+    .wkhrs2 {
+        text-align: center;
+    }
+    .wkhrs1 p,
+    .wkhrs2 p {
+        margin: 0;
+    }
+    .wkhrs1 > .hours,
+    .wkhrs2 > .hours {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        justify-content: center;
+    }
+    .wkhrs1 > .hours li,
+    .wkhrs2 > .hours li {
+        display: inline;
+    }
+    .wkhrs1 > .hours li .right::after,
+    .wkhrs2 > .hours li .right::after {
+        content: none;
+    }
+    .wkhrs1 > .hours li::after,
+    .wkhrs2 > .hours li::after {
+        content: "|";
+        display: inline-block;
+        padding-left: 0.35em;
+        padding-right: 0.35em;
+    }
+    .wkhrs1 > .hours li:last-child::after,
+    .wkhrs2 > .hours li:last-child::after {
+        content: none;
+    }
+    .wkhrs1 > .hours::before {
+        content: "Sales:";
+        font-weight: bold;
+        margin-right: 0.35em;
+    }
+    .wkhrs2 > .hours::before {
+        content: "Service:";
+        font-weight: bold;
+        margin-right: 0.35em;
+    }
+    .wkhrs1 > .hours:has(li:nth-child(4)) li:nth-child(3)::after {
+        content: none;
+    }
+    .wkhrs1 > .hours:has(li:nth-child(4)) li:nth-child(4) {
+        flex-basis: 100%;
+    }
+    .wkhrs1 > .hours:has(li:nth-child(4)) li:nth-child(4)::before {
+        content: "Special hours:";
+        font-weight: bold;
+        margin-right: 0.35em;
+    }
+    .wkhrs1 > .hours li .right::before,
+    .wkhrs2 > .hours li .right::before {
+        content: none;
+    }
+    .wkhrs1 > .hours li .right,
+    .wkhrs2 > .hours li .right {
+        padding-left: 0.35em;
+    }
+</style>
+
+<div class="wkhrs1">
+    <ul class="hours">
+        <li>Mon - Sat<span class="right"> 9:00 AM - 9:00 PM</span></li>
+        <li>Sun<span class="right"> Closed</span></li>
+    </ul>
+</div>
+<div class="wkhrs2">
+    <ul class="hours"><li>Mon - Fri<span class="right"> 7:00 AM - 6:00 PM</span></li>
+        <li>Sat<span class="right"> 8:00 AM - 5:00 PM</span></li>
+        <li>Sun<span class="right"> Closed</span></li>
+    </ul>
+</div>
+
+<!-- actual shortcode input -->
+ <!--
+<div class="wkhrs1">
+[di_hours department="Sales"]
+</div>
+<div class="wkhrs2">
+[di_hours department="Service & Parts"]
+</div>
+-->

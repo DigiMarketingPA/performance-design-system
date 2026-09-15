@@ -1,0 +1,205 @@
+<!-- Deal Layout start -->
+<!-- Requires: css/tpl.css + css/tpl-{brand}.css in Head/Header. -->
+<div class="tpl-root">
+  <div class="tpl-section">
+    <div class="tpl-container tpl-container--deal">
+      <h2>While Our Team Works on Your Deal…</h2>
+      <div class="tpl-deal">
+        <div class="tpl-deal-main">
+          <h3 class="tpl-deal-title">Other Vehicles You May Like</h3>
+          <div class="tpl-carousel">
+            <button type="button" class="tpl-carousel-btn tpl-carousel-prev" aria-label="Previous vehicles">&#10094;</button>
+            <button type="button" class="tpl-carousel-btn tpl-carousel-next" aria-label="Next vehicles">&#10095;</button>
+            <div class="tpl-carousel-track">
+              <!-- Live: [inventory_vehicle_cards sort-index="days_in_stock_high_to_low" type="New"] -->
+              
+              <article class="tpl-vcard">
+                <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Vehicle+1" alt="Vehicle placeholder">
+                <div class="tpl-vcard-body">
+                  <p class="tpl-mb-0"><strong>2024 Lorem Ipsum LX</strong></p>
+                  <p class="tpl-mb-0"><strong>$32,500</strong></p>
+                </div>
+              </article>
+
+              <article class="tpl-vcard">
+                <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Vehicle+2" alt="Vehicle placeholder">
+                <div class="tpl-vcard-body">
+                  <p class="tpl-mb-0"><strong>2023 Dolor Sit Amet</strong></p>
+                  <p class="tpl-mb-0"><strong>$28,900</strong></p>
+                </div>
+              </article>
+
+              <article class="tpl-vcard">
+                <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Vehicle+3" alt="Vehicle placeholder">
+                <div class="tpl-vcard-body">
+                  <p class="tpl-mb-0"><strong>2025 Adipiscing Elit</strong></p>
+                  <p class="tpl-mb-0"><strong>$41,200</strong></p>
+                </div>
+              </article>
+
+              <article class="tpl-vcard">
+                <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Vehicle+4" alt="Vehicle placeholder">
+                <div class="tpl-vcard-body">
+                  <p class="tpl-mb-0"><strong>2022 Tempor Incididunt</strong></p>
+                  <p class="tpl-mb-0"><strong>$24,750</strong></p>
+                </div>
+              </article>
+
+              <article class="tpl-vcard">
+                <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Vehicle+5" alt="Vehicle placeholder">
+                <div class="tpl-vcard-body">
+                  <p class="tpl-mb-0"><strong>2024 Sed Do Eiusmod</strong></p>
+                  <p class="tpl-mb-0"><strong>$36,100</strong></p>
+                </div>
+              </article>
+
+              <article class="tpl-vcard">
+                <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Vehicle+6" alt="Vehicle placeholder">
+                <div class="tpl-vcard-body">
+                  <p class="tpl-mb-0"><strong>2023 Magna Aliqua</strong></p>
+                  <p class="tpl-mb-0"><strong>$29,450</strong></p>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </div>
+        <div class="tpl-deal-side">
+          <div class="tpl-deal-tile">
+            <h3 class="tpl-deal-tile-title">🏷️ Current Service Specials 🏷️</h3>
+            <p class="tpl-lead">Save on your next service with our current specials. Click on the buttons below to learn more.</p>
+            <div class="tpl-deal-tile-actions">
+              <a class="button button--primary button--normal" href="/service-parts-special-coupons/" target="_blank" rel="noopener">Service Specials</a>
+              <a class="button button--primary button--normal" href="/service/schedule-service/" target="_blank" rel="noopener">Schedule Service</a>
+              <a class="button button--primary button--normal" href="/parts/" target="_blank" rel="noopener">Order Parts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Deal Layout end -->
+
+<!-- Page JS: paste with this section. Skip if tpl.js is already on the page. -->
+<script data-cfasync="false">
+// Section Template Library — FAQ, store modals, deal carousel
+// Included at the bottom of faq / store-directory / deal-layout section HTML.
+// data-cfasync="false" on the <script> tag keeps Cloudflare Rocket Loader off this block.
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.__tplJsInit) return;
+  window.__tplJsInit = true;
+
+  // FAQ
+  var faqItems = document.querySelectorAll(".tpl-faq-item");
+
+  faqItems.forEach(function (faqItem) {
+    var faqHeader = faqItem.querySelector(".tpl-faq-q");
+    if (!faqHeader) return;
+
+    faqHeader.addEventListener("click", function () {
+      faqItem.classList.toggle("tpl-open");
+
+      faqItems.forEach(function (otherItem) {
+        if (otherItem !== faqItem) {
+          otherItem.classList.remove("tpl-open");
+        }
+      });
+    });
+  });
+
+  // Store modals
+  var storeCards = document.querySelectorAll(".tpl-store[data-tpl-modal]");
+  var storeModals = document.querySelectorAll(".tpl-modal");
+  var closeButtons = document.querySelectorAll(".tpl-modal-close");
+
+  storeCards.forEach(function (card) {
+    card.addEventListener("click", function (e) {
+      var modalId = card.getAttribute("data-tpl-modal");
+      if (!modalId) return;
+      e.preventDefault();
+      var modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add("tpl-open");
+        document.body.style.overflow = "hidden";
+      }
+    });
+  });
+
+  closeButtons.forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var modal = button.closest(".tpl-modal");
+      if (modal) {
+        modal.classList.remove("tpl-open");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  storeModals.forEach(function (modal) {
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.classList.remove("tpl-open");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      storeModals.forEach(function (modal) {
+        if (modal.classList.contains("tpl-open")) {
+          modal.classList.remove("tpl-open");
+          document.body.style.overflow = "";
+        }
+      });
+    }
+  });
+
+  // Deal carousel — scroll by ~3 cards (matches thank-you page)
+  document.querySelectorAll(".tpl-carousel").forEach(function (carousel) {
+    var track = carousel.querySelector(".tpl-carousel-track");
+    var prev = carousel.querySelector(".tpl-carousel-prev");
+    var next = carousel.querySelector(".tpl-carousel-next");
+    if (!track) return;
+
+    var gapPx = 24;
+
+    function firstCard() {
+      return (
+        track.querySelector(".tpl-vcard") ||
+        track.querySelector(".result-wrap") ||
+        null
+      );
+    }
+
+    function getScrollStep() {
+      var card = firstCard();
+      if (card) {
+        return card.getBoundingClientRect().width * 3 + gapPx * 2;
+      }
+      return track.clientWidth || 900;
+    }
+
+    function updateArrows() {
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      if (prev) prev.disabled = track.scrollLeft <= 0;
+      if (next) next.disabled = maxScroll <= 0 || track.scrollLeft >= maxScroll - 1;
+    }
+
+    function move(dir) {
+      track.scrollBy({ left: getScrollStep() * dir, behavior: "smooth" });
+    }
+
+    if (prev) prev.addEventListener("click", function () { move(-1); });
+    if (next) next.addEventListener("click", function () { move(1); });
+    track.addEventListener("scroll", updateArrows);
+    if (typeof ResizeObserver !== "undefined") {
+      new ResizeObserver(updateArrows).observe(track);
+    }
+    updateArrows();
+  });
+});
+</script>

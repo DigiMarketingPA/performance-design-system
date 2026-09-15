@@ -1,0 +1,838 @@
+/* Thank You Page – ty- prefix to avoid conflicts with site styles */
+
+.ty-page *, .ty-page *::before, .ty-page *::after { box-sizing: border-box; }
+.ty-page { margin: 0; font-family: inherit; }
+
+.ty-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem 1.25rem;
+}
+.ty-container-deal {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem 1.25rem;
+}
+.ty-deal-layout {
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  max-height: 450px;
+}
+.ty-deal-left {
+  flex: 1 1 65%;
+  min-width: 0;
+  min-height: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.ty-deal-right {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.ty-tile-service {
+  position: sticky;
+  top: 1.5rem;
+  flex: 1;
+  min-height: 0;
+  max-height: 450px;
+}
+@media (max-width: 900px) {
+  .ty-deal-layout { flex-direction: column; }
+  .ty-deal-left { flex: 1 1 100%; }
+  .ty-deal-right { flex: 0 0 auto; width: 100%; max-width: 400px; }
+  .ty-tile-service { position: static; }
+}
+.ty-center { text-align: center; }
+
+/* Blocks (replaces sections) */
+.ty-block { padding: 2rem 0; background: #fff; }
+.ty-block--gray { background: #f7fafc; }
+
+.ty-headline { margin: 0 0 1rem; font-size: clamp(1.35rem, 3vw, 1.75rem); font-weight: 700; }
+.ty-lead { margin: 0 0 1.25rem; font-size: 2.05rem; line-height: 1.5; }
+.ty-cta { margin: 0; }
+.ty-small { margin: 0; font-size: 1.8rem; color: #718096; }
+.ty-trust { margin: 0.75rem 0 0; font-size: 1.9rem; color: #4a5568; }
+
+/* Block 1 – Next Steps: text + handshake image (40% width) */
+.ty-next-steps-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.ty-next-steps-content {
+  flex: 1 1 55%;
+  min-width: 0;
+}
+.ty-next-steps-image {
+  flex: 0 0 40%;
+  min-width: 280px;
+  max-width: 100%;
+}
+.ty-next-steps-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 400;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .ty-next-steps-inner { flex-direction: column; }
+  .ty-next-steps-content { flex: 1 1 100%; }
+  .ty-next-steps-image { flex: 0 0 auto; width: 100%; max-width: 400px; margin: 0 auto; }
+}
+
+/* Timeline */
+.ty-timeline { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+.ty-timeline-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; line-height: 1.5; }
+.ty-check {
+  flex-shrink: 0; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: #111; margin-top: 0.2em;
+  display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.75rem; font-weight: bold;
+}
+.ty-check::after { content: "✓"; }
+
+/* Buttons – match site #di-modal / .sb-section .button */
+.ty-btn,
+.ty-btn:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  box-shadow: none;
+  padding: 12px 24px;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  color: #fff !important;
+  position: relative;
+  text-transform: none;
+  text-align: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  margin: 0 auto 0.625rem auto;
+  transition: all 0.5s ease;
+  letter-spacing: normal;
+}
+.ty-btn:hover,
+.ty-btn:focus {
+  background: #333;
+  color: #fff !important;
+  box-shadow: none;
+  text-decoration: none !important;
+}
+.ty-btn-primary { background: #111; color: #fff !important; text-decoration: none !important; }
+.ty-btn-primary:hover,
+.ty-btn-primary:focus { background: #333; color: #fff !important; text-decoration: none !important; }
+.ty-btn-accent { background: #111; color: #fff !important; text-decoration: none !important; }
+.ty-btn-accent:hover,
+.ty-btn-accent:focus { background: #333; color: #fff !important; text-decoration: none !important; }
+.ty-btn-lg { padding: 14px 28px; font-size: 15px; }
+.ty-btn-spcl {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+.ty-btn-spcl:last-child { margin-bottom: 0; }
+a.ty-btn.ty-btn-primary {margin-top: 10px !important;}
+
+/* Card (trade-in) */
+.ty-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.ty-card-visual {
+  height: 200px;
+  background: linear-gradient(135deg, #C0C0C0 0%, #111 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.ty-card-visual img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.ty-card-body { padding: 1.5rem; }
+.ty-valuation {
+  margin: 1.25rem 0; padding: 1.5rem; background: #f7fafc; border-radius: 6px; text-align: center;
+}
+.ty-valuation .ty-btn { margin-top: 0.5rem; }
+
+/* Finance */
+.ty-finance-image {
+  width: 600px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.ty-finance-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 400;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+.ty-finance {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem 3rem;
+    align-items: center;
+}
+@media (max-width: 768px) {
+  .ty-finance { grid-template-columns: 1fr; }
+  .ty-finance-image { width: 100%; max-width: 400px; margin: 0 auto; }
+}
+.ty-benefits { margin: 0 0 1.5rem; padding-left: 1.25rem; line-height: 1.7; }
+.ty-finance-icons { display: flex; flex-direction: column; gap: 1rem; }
+.ty-icon { width: 48px; height: 48px; border-radius: 8px; background: #333; opacity: 0.85; }
+
+/* Video */
+.ty-video {
+  position: relative; max-width: 720px; margin: 0 auto 1.5rem; aspect-ratio: 16/9; background: #111;
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+}
+.ty-video-play {
+  width: 72px; height: 72px; border-radius: 50%; background: #c53030; border: none; cursor: pointer;
+  color: #fff; font-size: 2rem; line-height: 1; padding: 0; transition: transform 0.2s;
+}
+.ty-video-play:hover { transform: scale(1.05); }
+.ty-video-label {
+  position: absolute; bottom: 0.5rem; left: 0.5rem; right: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.8);
+}
+.ty-video .ty-video-placeholder-msg { color: #fff; padding: 2rem; margin: 0; }
+
+/* Tiles */
+.ty-tile { background: #f7fafc; border-radius: 8px; padding: 1.25rem; border: 1px solid #e2e8f0; }
+.ty-tile-title { margin: 0 0 1rem; font-size: 1.1rem; font-weight: 700; }
+
+/* Other Vehicles You May Like (VDP-style, inside While You Wait) */
+/* Shortcode injects: .ty-similar-vehicles-row > .lvrp-container > ... > #hits.columns-Auto > .result-wrap (cards) */
+.ty-similar-vehicles {
+  margin-bottom: 2.5rem;
+  min-width: 0; /* allow flex shrink in .ty-deal-left */
+}
+.ty-similar-vehicles .lvrp-container {
+  min-width: 0;
+}
+.ty-similar-vehicles-title {
+  margin: 0 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #969696;
+}
+h3.ty-tile-title.text-center {
+  font-size: 2rem !important;
+}
+/* Carousel wrapper: 3 across, 1 row, scroll with arrows */
+.ty-similar-vehicles-carousel {
+  position: relative;
+  width: 100%;
+}
+.ty-similar-vehicles-carousel .ty-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #cbd5e0;
+  background: #fff;
+  color: #111;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.ty-similar-vehicles-carousel .ty-carousel-arrow:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+.ty-similar-vehicles-carousel .ty-carousel-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.ty-similar-vehicles-carousel .ty-carousel-prev { left: 0.5rem; }
+.ty-similar-vehicles-carousel .ty-carousel-next { right: 0.5rem; }
+h3.ty-tile-title.text-center {
+  width: max-content;
+  margin: 0 auto;
+  padding: 1.5rem 3.5rem;
+}
+.ty-similar-vehicles-row {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-top: 0;
+  padding: 0 3rem;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 3rem;
+  -webkit-overflow-scrolling: touch;
+}
+.ty-similar-vehicles-row::-webkit-scrollbar {
+  display: none;
+}
+/* LVRP: single row, 3 visible columns, horizontal scroll (vehicle card shortcode only) */
+#similar-vehicles.ty-similar-vehicles .ty-similar-vehicles-row .lvrp-container #hits.columns-Auto,
+.ty-similar-vehicles-row .lvrp-container #hits.columns-Auto {
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-auto-columns: minmax(280px, 320px) !important;
+  grid-template-rows: 1fr !important;
+  gap: 1.5rem;
+  width: max-content !important;
+  max-width: 100%;
+  align-items: start;
+}
+#similar-vehicles.ty-similar-vehicles .ty-similar-vehicles-row.flex-row .lvrp-container #hits.columns-Auto,
+.ty-similar-vehicles-row.flex-row .lvrp-container #hits.columns-Auto {
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-auto-columns: minmax(250px, 300px) !important;
+  grid-template-rows: 1fr !important;
+  gap: 1.5rem;
+  width: max-content !important;
+  max-width: 100%;
+}
+/* Single row: each card has fixed column width so ~3 visible, scroll for more */
+#similar-vehicles.ty-similar-vehicles .ty-similar-vehicles-row .lvrp-container #hits.columns-Auto .result-wrap,
+.ty-similar-vehicles-row.flex-row .lvrp-container #hits.columns-Auto .result-wrap {
+  min-width: 0;
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+/* Keep existing .ty-similar-vehicles-item for any static/placeholder markup */
+.ty-similar-vehicles-row.flex-row .ty-similar-vehicles-item {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+/* LVRP cards: single row, smaller images – only inside similar vehicles */
+.ty-similar-vehicles .result-wrap {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.ty-similar-vehicles .result-wrap .hit {
+  display: flex;
+  flex-direction: column;
+}
+.ty-similar-vehicles .hit-link {
+  display: block;
+  overflow: hidden;
+}
+.ty-similar-vehicles .hit-image-wrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #f7fafc;
+}
+.ty-similar-vehicles .hit-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.ty-similar-vehicles .hit-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ty-similar-vehicles .hit-content {
+  padding: 0.75rem 1rem;
+}
+.ty-similar-vehicles .result-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.ty-similar-vehicles .advanced-pricing-vrp-wrapper,
+.ty-similar-vehicles .price-stack {
+  margin-top: 0.25rem;
+}
+.ty-similar-vehicles .price-block.our-price .price,
+.ty-similar-vehicles .price-block.our-price.real-price .price {
+  font-size: 0.95rem;
+}
+/* Wrappers: allow shrink, don't force layout */
+.ty-similar-vehicles-row .lvrp-container,
+.ty-similar-vehicles-row .lvrp-results-column {
+  min-width: 0;
+}
+.ty-similar-vehicles-row #lvrp-results-wrapper.vehicle-cards {
+  min-width: 0;
+}
+/* Hide LVRP UI elements in similar vehicles */
+.ty-similar-vehicles .compare-icon { display: none; }
+.ty-similar-vehicles button.vrp-heart.list-save.heart-icon { display: none; }
+.ty-similar-vehicles .hit-price.hit-price--below { display: none !important; }
+.ty-similar-vehicles .stock-row { display: none; }
+.ty-similar-vehicles .incentives.incentives-breakdown.conditional-incentives-breakdown.subtract { display: none; }
+.ty-similar-vehicles ul.vehicle-details { display: none; }
+.ty-similar-vehicles-item {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.ty-similar-vehicles-item:hover {
+  border-color: #cbd5e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.ty-similar-vehicles-item > a {
+  display: block;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #f7fafc;
+}
+.ty-similar-vehicles-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ty-similar-vehicles-info {
+  padding: 1rem;
+  position: relative;
+}
+.ty-similar-vehicles-info .modern-retail-components {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 1;
+}
+.ty-similar-vehicles-info .compare-icon,
+.ty-similar-vehicles-info .heart-icon {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: #4a5568;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+.ty-similar-vehicles-info .compare-icon:hover,
+.ty-similar-vehicles-info .heart-icon:hover {
+  color: #111;
+}
+.ty-similar-vehicles-info .compare-icon__label {
+  font-size: 0.7rem;
+  margin-left: 0.2rem;
+}
+.ty-similar-vehicles-info .osHeartIcon--bg { fill: #fff; stroke: #4a5568; }
+.ty-similar-vehicles-info .osHeartIcon--heart { fill: #fff; stroke: #4a5568; }
+.ty-similar-vehicles-info a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding-right: 4rem;
+}
+.ty-similar-vehicles-info a:hover {
+  color: #111;
+}
+.ty-similar-vehicles-name {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.ty-similar-vehicles-price {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ==========================================================================
+   Fixed Ops / Service Specials shortcode – titles only, uniform cards
+   Scope: only when shortcode is inside .ty-tile-service (thank you page)
+   ========================================================================== */
+.ty-tile.ty-tile-service {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+.ty-tile.ty-tile-service .ty-tile-title {
+  flex-shrink: 0;
+}
+.ty-tile.ty-tile-service .difo-wrapper {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ty-tile-service .difo-wrapper .difo-default-coupon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: start;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: none;
+}
+.ty-tile-service .ty-coupon-scroll-arrows {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0 0;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 0.25rem;
+}
+.ty-tile-service .ty-coupon-scroll-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e0;
+  background: #fff;
+  color: #4a5568;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0;
+  transition: background 0.2s, color 0.2s;
+}
+.ty-tile-service .ty-coupon-scroll-btn:hover {
+  background: #f7fafc;
+  color: #111;
+}
+.ty-tile-service .ty-coupon-scroll-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.ty-tile-service .difo-wrapper .difo-default-coupon .difo-card {
+  width: 100%;
+}
+.ty-tile-service .difo-wrapper .difo-card .inner {
+  height: auto !important;
+  min-height: 0 !important;
+}
+.ty-tile-service .difo-wrapper .difo-card .coupon-header .coupon-photo,
+.ty-tile-service .difo-wrapper .difo-card .coupon-content,
+.ty-tile-service .difo-wrapper .difo-card .coupon-pricing,
+.ty-tile-service .difo-wrapper .difo-card .hidden,
+.ty-tile-service .difo-wrapper .difo-card .edit-difo {
+  display: none !important;
+}
+/* Keep only the header inner (title); remove margins */
+.ty-tile-service .difo-wrapper .difo-card .coupon-header {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+.ty-tile-service .difo-wrapper .difo-card .coupon-header .coupon-header-inner {
+  padding: 0 0 0 0.75rem;
+  margin: 0;
+}
+.ty-tile-service .difo-wrapper .difo-card .coupon-header .coupon-header-inner .coupon-title,
+.ty-tile-service .difo-wrapper .difo-card .coupon-header .coupon-header-inner .coupon-title strong {
+  font-size: 15px !important;
+  margin: auto;
+  margin-bottom: 0;
+  font-weight: 700 !important;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.ty-tile-service .difo-wrapper .difo-card .coupon-header .coupon-header-inner .coupon-title::before {
+  content: "🔖 ";
+}
+.ty-tile-service .difo-wrapper h2.coupon-title {
+  margin: auto;
+}
+.ty-tile-service .difo-wrapper .coupon-detailed-pricing {
+  display: none !important;
+}
+/* Vertically center title in card; make card row a flex row */
+.ty-tile-service .difo-wrapper .difo-card .inner .container-fluid .row {
+  display: flex;
+  align-items: center;
+}
+.ty-tile-service .difo-wrapper .difo-card .coupon-header {
+  flex: 1;
+}
+/* Clickable: link wraps title and fills card */
+.ty-tile-service .difo-wrapper .difo-card .coupon-header-inner a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.35rem 0;
+}
+.ty-tile-service .difo-wrapper .difo-card .coupon-header-inner a:hover {
+  color: #333;
+}
+/* Uniform card styling – no margins */
+.ty-tile-service .difo-wrapper .difo-grid-coupons .difo-card {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+.ty-tile-service .difo-wrapper .difo-grid-coupons .difo-card:last-child {
+  border-bottom: none;
+}
+
+h2.coupon-title {
+  margin: auto !important;
+padding: 10px;
+}
+
+/* ==========================================================================
+   Face behind the keys – staff shortcode [staff department="Sales"]
+   Single row, 5 visible columns, horizontal scroll; hide phone and button
+   ========================================================================== */
+.staff-layout-default.staff-container.grid {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.staff-layout-default.staff-container.grid::-webkit-scrollbar {
+  height: 6px;
+}
+.staff-layout-default.staff-container .staff {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: max-content;
+}
+.staff-layout-default.staff-container .staff .staff-item {
+  flex: 0 0 160px;
+  width: 160px;
+  height: auto !important;
+  margin: 0;
+}
+.staff-layout-default.staff-container .staff .staff-item .staffpic {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 250 / 356;
+  object-fit: cover;
+}
+.staff-layout-default.staff-container .staff .staff-item > div {
+  padding: 0.5rem 0 0;
+}
+.staff-layout-default.staff-container .staff .staff-item h3 {
+  margin: 0 0 0.2em;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.staff-layout-default.staff-container .staff .staff-item h4 {
+  margin: 0 0 0.2em;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.staff-layout-default.staff-container .staff .staff-item .staffphone,
+.staff-layout-default.staff-container .staff .staff-item .staff-button {
+  display: none !important;
+}
+.staff-layout-default.staff-container .staff .staff-item .staff-bio {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .staff-layout-default.staff-container .staff .staff-item {
+    flex: 0 0 140px;
+    width: 140px;
+  }
+}
+@media (max-width: 600px) {
+  .staff-layout-default.staff-container .staff .staff-item {
+    flex: 0 0 120px;
+    width: 120px;
+  }
+}
+
+/* ==========================================================================
+   Store location cards (NEW / USED)
+   ========================================================================== */
+.ty-location-split {
+  display: grid;
+  grid-template-columns: minmax(0, 580px) minmax(0, 560px);
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.ty-location-video {
+  width: 100%;
+}
+.ty-location-video-embed {
+  width: 100%;
+  aspect-ratio: 1.85;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+}
+.ty-location-video-el {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.ty-location-address-stack > :first-child {
+  margin-top: 0;
+}
+.ty-location-address-stack > :last-child {
+  margin-bottom: 0;
+}
+
+.ty-location-cards {
+  display: grid;
+  /* Single, slightly wider card centered under the title */
+  grid-template-columns: minmax(0, 580px);
+  justify-content: center;
+  margin-top: 0;
+}
+.ty-location-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+}
+.ty-location-card-image {
+  aspect-ratio: 5;
+  overflow: hidden;
+  background: #050608;
+}
+.ty-location-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 15px 15px 15px 15px;
+}
+.ty-location-card-body {
+  padding: 1.25rem 1.5rem;
+}
+.ty-location-card-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+}
+.ty-location-address,
+.ty-location-link,
+.ty-location-phone {
+  margin: 0 0 0.5rem;
+  font-size: 1.95rem;
+  line-height: 1.5;
+}
+.ty-location-link a {
+  color: #C0C0C0;
+  text-decoration: none;
+  font-weight: 600;
+}
+.ty-location-link a:hover {
+  text-decoration: underline;
+}
+.ty-location-phone a {
+  color: inherit;
+  text-decoration: none;
+}
+.ty-location-phone a:hover {
+  color: #C0C0C0;
+}
+.ty-location-hours {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+.ty-location-hours p {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #4a5568;
+}
+@media (max-width: 768px) {
+  .ty-location-split {
+    grid-template-columns: 1fr;
+  }
+  .ty-location-video {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ty-location-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Override global VRP width so cards fill grid cells (were displaying at 20% otherwise) */
+#similar-vehicles #lvrp-results-wrapper .hit {
+  width: 100% !important;
+  max-width: fit-content !important;
+}
+#similar-vehicles #lvrp-results-wrapper #hits .result-wrap {
+  width: 100% !important;
+  max-width: fit-content !important;
+}
+#lvrp-results-wrapper .hit .badge-row {
+  display: none !important;
+}
+#lvrp-results-wrapper .hit-content .lightning-vrp-custom-html {
+  display: none !important;
+}
+#lvrp-results-wrapper .hit-additional-ctas {
+  display: none !important;
+}
+#lvrp-results-wrapper .result-price {
+  margin-top: 0 !important;
+}
+
+span.department {
+    padding-left: .5rem;
+}
+
+#lvrp-results-wrapper .hit-status {
+  display: none !important;
+}

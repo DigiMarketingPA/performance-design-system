@@ -1,0 +1,9 @@
+{
+  "name": "section-template-library",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Paste-ready Composer section snippets aligned to Bootstrap 5.3.8",
+  "dependencies": {
+    "bootstrap": "5.3.8"
+  }
+}

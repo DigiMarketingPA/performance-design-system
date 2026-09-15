@@ -1,0 +1,79 @@
+<style>
+.eduvids {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.video {
+    position: relative;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video video {
+    width: 100%;
+    height: auto;
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@media (max-width: 767px) {
+    .eduvids {
+        grid-template-columns: 1fr; /* Stack videos vertically on smaller screens */
+    }
+}
+</style>
+
+<h3>Informative EV Videos</h3>
+<div class="eduvids">
+    <div class="video">
+        <img class="cover" src="cover1.jpg" alt="Cover Image 1">
+        <video id="video1" preload="auto" crossorigin="anonymous" webkit-playsinline="" muted="false" src="https://unityworks-a.akamaihd.net/anon.unityworks/9/P/9/52057148_EV_Showcase_Charging_your_EV_240508_240508012103_4.mp4">
+            <track kind="captions" src="">
+        </video>
+    </div>
+    <div class="video">
+        <video autoplay="disable" playsinline="" id="uwmHTML5player" preload="auto" crossorigin="anonymous" webkit-playsinline="" muted="false" src="https://unityworks-a.akamaihd.net/anon.unityworks/D/N/F/52057117_EV_Showcase_Benefits_of_EV_vs_ICE_240508_240508011431_4.mp4">
+            <track kind="captions" src="">
+        </video>
+    </div>
+    <div class="video">
+        <video autoplay="disable" playsinline="" id="uwmHTML5player" preload="auto" crossorigin="anonymous" webkit-playsinline="" muted="false" src="https://unityworks-a.akamaihd.net/anon.unityworks/8/R/C/52057133_EV_Showcase_EV_Ownership_Experience_240508b_240515124648_4.mp4">
+            <track kind="captions" src="">
+        </video>
+    </div>
+    <div class="video">
+        <video autoplay="disable" playsinline="" id="uwmHTML5player" preload="auto" crossorigin="anonymous" webkit-playsinline="" muted="false" src="https://unityworks-a.akamaihd.net/anon.unityworks/J/J/Y/52057123_EV_Showcase_EV_Myths_Busted_240508_240508011036_1.mp4">
+            <track kind="captions" src="">
+        </video>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.video').forEach(videoContainer => {
+    const video = videoContainer.querySelector('video');
+    const cover = videoContainer.querySelector('.cover');
+
+    cover.addEventListener('click', () => {
+        cover.style.display = 'none'; // Hide the cover image
+        video.play(); // Play the video
+    });
+});
+</script>

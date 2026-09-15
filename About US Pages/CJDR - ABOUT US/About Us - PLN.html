@@ -1,0 +1,1370 @@
+<style>
+    /* ============================================
+       Typography - Scoped Heading Styles
+       ============================================ */
+    .abt-container h1,
+    .abt-container h2,
+    .abt-container h3,
+    .abt-container h4,
+    .abt-container h5 {
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .abt-container h1 {
+        font-size: 2.5em;
+        padding-bottom: 1rem;
+    }
+
+    .abt-container h2 {
+        font-size: 2em;
+        padding-bottom: 1rem;
+    }
+
+    .abt-container h3 {
+        font-size: 1.75em;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .abt-container h4 {
+        font-size: 1.5em;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .abt-container h5 {
+        font-size: 1.25em;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    /* Heading underline decoration - grayscale */
+    .abt-container h1::after,
+    .abt-container h2::after,
+    .abt-container h3::after,
+    .abt-container h4::after,
+    .abt-container h5::after {
+        content: '';
+        display: block;
+        width: 150px;
+        height: 2px;
+        background-color: #555;
+        margin: 0.5rem auto 0;
+    }
+
+    /* Remove underline from specific contexts */
+    .abt-container4 h3::after,
+    .abt-corporate-section h3::after,
+    .abt-store-card h4::after,
+    .abt-contactbuttons .button.btn h4::after,
+    .abt-card1 h5::after,
+    .abt-card2 h5::after,
+    .abt-card3 h5::after,
+    .abt-card4 h5::after {
+        display: none;
+    }
+
+    /* Card text - centered */
+    .abt-card1, .abt-card2, .abt-card3, .abt-card4 {
+        text-align: center;
+    }
+
+    .abt-card1 h5, .abt-card2 h5, .abt-card3 h5, .abt-card4 h5 {
+        text-align: center;
+    }
+
+    /* ============================================
+       Container Layout
+       ============================================ */
+    .abt-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    /* ============================================
+       Container 1 & 2 - Image and Content Layout
+       ============================================ */
+    .abt-container1, .abt-container2 {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin: 2rem auto;
+    }
+
+    .abt-container2 {
+        flex-direction: row-reverse;
+    }
+
+    .abt-container1 .abt-imgleft,
+    .abt-container2 .abt-imgright {
+        flex: 1;
+        min-height: 300px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .abt-container1 .abt-imgleft img,
+    .abt-container2 .abt-imgright img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .abt-container2 .abt-imgright iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 315px;
+        border-radius: 12px;
+        border: none;
+        aspect-ratio: 16 / 9;
+    }
+
+    .abt-container1 .abt-contentright,
+    .abt-container2 .abt-contentleft {
+        flex: 1;
+    }
+
+    /* ============================================
+       Container 3 - Cards Grid
+       ============================================ */
+    .abt-container3 {
+        padding: 3rem 1rem;
+    }
+
+    .abt-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .abt-card1, .abt-card2, .abt-card3, .abt-card4 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    /* ============================================
+       Stores Section
+       ============================================ */
+    .abt-stores-section {
+        padding: 3rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* Section 4 - side-by-side layout */
+    .abt-section4 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .abt-section4 .abt-content {
+        flex: 1;
+        min-width: 280px;
+        max-width: none;
+        margin: 0;
+    }
+
+    .abt-section4 .abt-stores-grid {
+        flex: 1;
+        min-width: 280px;
+        max-width: 400px;
+    }
+
+    /* Section 4 - Lexus features grid */
+    .abt-section4 .abt-lexus-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .abt-section4 .abt-lexus-feature {
+        padding: 1.5rem 1rem;
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .abt-section4 .abt-lexus-feature:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        transform: translateY(-2px);
+    }
+
+    .abt-section4 .abt-lexus-feature h4 {
+        font-size: 1.15em;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        text-align: center;
+    }
+
+    .abt-section4 .abt-lexus-feature h4::after {
+        display: none;
+    }
+
+    .abt-section4 .abt-lexus-feature p {
+        margin: 0;
+        font-size: 0.95em;
+        line-height: 1.5;
+        text-align: center;
+        color: #333;
+    }
+
+    .abt-section4 .abt-content > p {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 2rem auto;
+        line-height: 1.6;
+    }
+
+    .abt-stores-section .abt-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .abt-stores-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .abt-store-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 1rem;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: #ffffff;
+        max-width: fit-content;
+    }
+
+    .abt-store-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .abt-store-card .abt-store-logo {
+        width: 100%;
+        max-height: 120px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+    }
+
+	img.abt-store-logo-pln {
+    	width: 81%; 
+      	margin: auto;
+	}
+
+    .abt-store-card h4 {
+        margin: 0;
+        text-align: center;
+    }
+
+    .abt-store-card p {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    .abt-store-card .button.btn {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        background-color: #555;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .abt-store-card .button.btn:hover {
+        background-color: #444;
+        color: #ffffff;
+    }
+
+    /* ============================================
+       Modal Styles
+       ============================================ */
+    .abt-store-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        animation: abt-fadeIn 0.3s ease;
+    }
+
+    .abt-store-modal.abt-active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .abt-modal-content {
+        background-color: #ffffff;
+        margin: auto;
+        padding: 2rem;
+        border-radius: 12px;
+        max-width: 600px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        animation: abt-slideIn 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .abt-modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2em;
+        font-weight: bold;
+        color: #999;
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.3s ease;
+    }
+
+    .abt-modal-close:hover {
+        color: #000;
+    }
+
+    .abt-modal-logo {
+        width: 100%;
+        max-height: 150px;
+        object-fit: contain;
+        margin-bottom: 1.5rem;
+    }
+
+    .abt-modal-contact-info {
+        margin-bottom: 1.5rem;
+    }
+
+    .abt-modal-contact-info p {
+        margin: 0.5rem 0;
+        line-height: 1.6;
+    }
+
+    .abt-modal-see-more {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        background-color: #555;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        width: 100%;
+    }
+
+    .abt-modal-see-more:hover {
+        background-color: #444;
+      	color: #ffffff !important;
+      	text-decoration: none;
+    }
+
+    /* ============================================
+       Animations
+       ============================================ */
+    @keyframes abt-fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes abt-slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* ============================================
+       Container 4 - Content Section
+       ============================================ */
+    .abt-container4 {
+        background-color: transparent;
+    }
+
+    .abt-container4 .abt-content {
+        max-width: 900px;
+        margin: 0 auto;
+        font-size: inherit;
+        text-align: center;
+    }
+
+    .abt-container4 hr {
+        margin: 2rem 0;
+        border: none;
+        border-top: 2px solid #555;
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ============================================
+       Why PAN Features - bullets side by side
+       ============================================ */
+    .abt-why-pan-features {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .abt-why-pan-features ul {
+        line-height: 2;
+        padding-left: 1.5rem;
+        margin: 0;
+        flex: 1 1 200px;
+        min-width: 200px;
+        max-width: 400px;
+        text-align: left;
+    }
+
+    /* ============================================
+       Container 5 - FAQ Accordion
+       ============================================ */
+    .abt-container5 .abt-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .abt-faq1, .abt-faq2, .abt-faq3, .abt-faq4, .abt-faq5 {
+        border: 1px solid #e0e0e0;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .abt-faq1 h4, .abt-faq2 h4, .abt-faq3 h4, .abt-faq4 h4, .abt-faq5 h4 {
+        margin: 0;
+        padding: 1rem 1rem 2rem 1rem;
+        cursor: pointer;
+        position: relative;
+        transition: background-color 0.3s ease;
+        text-align: center;
+    }
+
+    .abt-faq1 h4::before, .abt-faq2 h4::before, .abt-faq3 h4::before, .abt-faq4 h4::before, .abt-faq5 h4::before {
+        display: none;
+    }
+
+    .abt-faq1 h4:hover, .abt-faq2 h4:hover, .abt-faq3 h4:hover, .abt-faq4 h4:hover, .abt-faq5 h4:hover {
+        background-color: #f5f5f5;
+    }
+
+    .abt-faq1 h4::after, .abt-faq2 h4::after, .abt-faq3 h4::after, .abt-faq4 h4::after, .abt-faq5 h4::after {
+        content: '+';
+        position: absolute;
+        right: 1rem;
+        font-size: 1.5em;
+        transition: transform 0.3s ease;
+        /* Remove blue line styling */
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        margin: 0;
+        display: inline;
+    }
+
+    .abt-faq1.abt-active h4::after, .abt-faq2.abt-active h4::after, .abt-faq3.abt-active h4::after, .abt-faq4.abt-active h4::after, .abt-faq5.abt-active h4::after {
+        transform: rotate(45deg);
+    }
+
+    .abt-faq1 p, .abt-faq2 p, .abt-faq3 p, .abt-faq4 p, .abt-faq5 p {
+        margin: 0;
+        padding: 0 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .abt-faq1.abt-active p, .abt-faq2.abt-active p, .abt-faq3.abt-active p, .abt-faq4.abt-active p, .abt-faq5.abt-active p {
+        max-height: 600px;
+        padding: 1rem;
+    }
+
+    /* ============================================
+       Corporate Section (About PAN)
+       ============================================ */
+    .abt-corporate-section {
+        padding: 3rem 1rem;
+        background-color: #f5f5f5;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .abt-corporate-section h3 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .abt-corporate-section p {
+        text-align: center;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* ============================================
+       Container 6 - Map and Contact Buttons
+       ============================================ */
+    .abt-container6 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .abt-map {
+        width: 100%;
+        min-height: 400px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .abt-map iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 50px);
+        border: none;
+        border-radius: 12px;
+    }
+
+    .abt-contactbuttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .abt-contactbuttons > * {
+        flex-shrink: 0;
+    }
+
+    .abt-contactbuttons .button.btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        background: #555;
+        color: #fff;
+        width: 100%;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    .abt-contactbuttons .button.btn:hover {
+        background: #444;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .abt-contactbuttons .button.btn em {
+        font-size: 1.5em;
+        line-height: 1;
+        display: block;
+    }
+
+    .abt-contactbuttons .button.btn h4 {
+        margin: 0;
+        display: block;
+        font-size: 1em;
+    }
+
+    .abt-contactbuttons .button.btn h4::after {
+        display: none;
+    }
+
+    .abt-contactbuttons .button.btn p,
+    .abt-contactbuttons p {
+        display: none;
+    }
+
+    .abt-contactbuttons a[tabindex="-1"],
+    .abt-contactbuttons a[aria-hidden="true"] {
+        display: none !important;
+    }
+
+    /* ============================================
+       Job Buttons
+       ============================================ */
+    .abt-jobbuttons {
+        display: grid;
+        gap: 1rem;
+        align-items: stretch;
+        padding-top: 10px;
+    }
+
+    .abt-jobbuttons .button.btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        background: #555;
+        color: #fff;
+        width: 100%;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        border-radius: 12px;
+      	font-weight: 600;
+    }
+	
+	.abt-jobbuttons .button.btn:hover {
+    	background: #444;
+   		color: #fff;
+    	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    	transform: translateY(-2px); 
+	}
+
+    /* ============================================
+       Container 7 - Additional Locations
+       ============================================ */
+    .abt-container7 {
+        padding: 3rem 1rem;
+    }
+
+    .abt-container7 .abt-location-cards {
+        max-width: 800px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .abt-container7 .abt-location-cards h3 {
+        margin-bottom: 1rem;
+        text-align: center;
+        grid-column: 1 / -1;
+    }
+
+    .abt-container7 .abt-location-cards h3::after {
+        margin-bottom: 1rem;
+    }
+
+    .abt-container7 .abt-location-cards > p {
+        text-align: center;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        grid-column: 1 / -1;
+    }
+
+    .abt-container7 .abt-location-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        border-radius: 12px;
+        background-color: #ffffff;
+        transition: all 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .abt-container7 .abt-location-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .abt-container7 .abt-location-logo {
+        width: 100%;
+        max-width: 300px;
+        max-height: 150px;
+        object-fit: contain;
+    }
+
+    .abt-container7 .abt-location-card .button.btn {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        background-color: #555;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        width: 100% !important;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+
+    .abt-container7 .abt-location-card .button.btn:hover {
+        background-color: #444;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    /* ============================================
+       Responsive Design
+       ============================================ */
+    
+    /* Large Tablets and Small Desktops */
+    @media (max-width: 1024px) {
+        .abt-container {
+            padding: 1.5rem 1rem;
+        }
+
+        .abt-container1, .abt-container2 {
+            gap: 1.5rem;
+        }
+
+        .abt-cards {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .abt-stores-grid {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .abt-container7 .abt-location-cards {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+    }
+
+    /* Tablets */
+    @media (max-width: 768px) {
+        .abt-container h1 { font-size: 2em; }
+        .abt-container h2 { font-size: 1.75em; }
+        .abt-container h3 { font-size: 1.5em; }
+        .abt-container h4 { font-size: 1.25em; }
+        .abt-container h5 { font-size: 1.1em; }
+
+        .abt-container {
+            padding: 1.5rem 1rem;
+        }
+
+        .abt-container1, .abt-container2 {
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 1.5rem auto;
+        }
+
+        .abt-section4 {
+            flex-direction: column;
+        }
+
+        .abt-section4 .abt-lexus-features {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .abt-container1 .abt-imgleft,
+        .abt-container2 .abt-imgright {
+            min-height: 250px;
+            width: 100%;
+        }
+
+        .abt-container2 .abt-imgright iframe {
+            min-height: 250px;
+        }
+
+        .abt-container3,
+        .abt-stores-section,
+        .abt-corporate-section,
+        .abt-container7 {
+            padding: 2rem 1rem;
+        }
+
+        .abt-cards {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .abt-stores-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .abt-container7 .abt-location-cards {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .abt-container6 {
+            gap: 1.5rem;
+        }
+
+        .abt-map {
+            min-height: 300px;
+        }
+
+        .abt-contactbuttons {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .abt-modal-content {
+            width: 95%;
+            padding: 1.5rem;
+        }
+
+        .abt-why-pan-features {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .abt-why-pan-features ul {
+            max-width: 100%;
+            min-width: 100%;
+            line-height: 1.5;
+          	flex: 0;
+        }
+
+        .abt-why-pan-features ul li {
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    /* Mobile Devices */
+    @media (max-width: 480px) {
+        .abt-container h1 { font-size: 1.75em; }
+        .abt-container h2 { font-size: 1.5em; }
+        .abt-container h3 { font-size: 1.25em; }
+        .abt-container h4 { font-size: 1.1em; }
+        .abt-container h5 { font-size: 1em; }
+
+        .abt-container {
+            padding: 1rem 0.75rem;
+        }
+
+        .abt-container1, .abt-container2 {
+            margin: 1rem auto;
+            gap: 1rem;
+        }
+
+        .abt-container1 .abt-imgleft,
+        .abt-container2 .abt-imgright {
+            min-height: 200px;
+        }
+
+        .abt-container2 .abt-imgright iframe {
+            min-height: 200px;
+        }
+
+        .abt-container3,
+        .abt-stores-section,
+        .abt-corporate-section,
+        .abt-container7 {
+            padding: 1.5rem 0.75rem;
+        }
+
+        .abt-cards {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        .abt-stores-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .abt-section4 {
+            flex-direction: column;
+        }
+
+        .abt-section4 .abt-lexus-features {
+            grid-template-columns: 1fr;
+        }
+
+        .abt-container7 .abt-location-cards {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .abt-card1, .abt-card2, .abt-card3, .abt-card4,
+        .abt-store-card,
+        .abt-container7 .abt-location-card {
+            padding: 1rem;
+        }
+
+        .abt-container6 {
+            gap: 1rem;
+        }
+
+        .abt-map {
+            min-height: 250px;
+        }
+
+        .abt-contactbuttons {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .abt-contactbuttons .button.btn {
+            padding: 1rem;
+        }
+
+        .abt-contactbuttons .button.btn em {
+            font-size: 1.5em;
+        }
+
+        .abt-modal-content {
+            width: 95%;
+            padding: 1.25rem;
+            margin: 1rem;
+        }
+
+        .abt-modal-close {
+            top: 0.75rem;
+            right: 0.75rem;
+            font-size: 1.75em;
+        }
+
+        .abt-why-pan-features {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .abt-why-pan-features ul {
+            padding-left: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .abt-why-pan-features ul li {
+            margin-bottom: 0.25rem;
+        }
+
+        .abt-faq1 h4, .abt-faq2 h4, .abt-faq3 h4, .abt-faq4 h4, .abt-faq5 h4 {
+            padding: 0.75rem 0.75rem 1.75rem 0.75rem;
+            font-size: 1em;
+        }
+
+        .abt-faq1 h4::after, .abt-faq2 h4::after, .abt-faq3 h4::after, .abt-faq4 h4::after, .abt-faq5 h4::after {
+            right: 0.75rem;
+            font-size: 1.25em;
+        }
+    }
+
+    /* Extra Small Devices */
+    @media (max-width: 360px) {
+        .abt-container h1 { font-size: 1.5em; }
+        .abt-container h2 { font-size: 1.35em; }
+        .abt-container h3 { font-size: 1.15em; }
+        .abt-container h4 { font-size: 1em; }
+        .abt-container h5 { font-size: 0.95em; }
+
+        .abt-container {
+            padding: 0.75rem 0.5rem;
+        }
+
+        .abt-container3,
+        .abt-stores-section,
+        .abt-corporate-section,
+        .abt-container7 {
+            padding: 1rem 0.5rem;
+        }
+
+        .abt-card1, .abt-card2, .abt-card3, .abt-card4,
+        .abt-store-card,
+        .abt-container7 .abt-location-card {
+            padding: 0.75rem;
+        }
+
+        .abt-contactbuttons .button.btn {
+            padding: 1rem;
+        }
+    }
+
+</style>
+
+<!-- Section 1 -->
+<div class="abt-container abt-header-container">
+    <img src="https://di-uploads-pod23.dealerinspire.com/performanceautomotivenetwork/uploads/2026/01/2026-01-15-Choose-Experience_Desk4.png" alt="Performance Lexus Northern Kentucky dealership banner" style="border-radius: 12px; width: 100%; display: block;">
+    <h1>About Performance Lexus Northern Kentucky</h1>
+    <p>Performance Lexus Northern Kentucky is a family-owned and operated dealership located in Fort Wright, KY. We help drivers throughout Northern Kentucky and the greater Cincinnati area find the right vehicle, financing, and service — all in one place. Conveniently located at 709 Wright's Summit Pkwy in Fort Wright, we serve Fort Wright, Covington, Florence, and the surrounding Northern Kentucky and Cincinnati communities.
+    <br><br>
+    Whether you're shopping for a new or pre-owned Lexus, exploring Lexus Certified Pre-Owned vehicles, or visiting for certified service and genuine parts, our team is here to make the process simple, transparent, and enjoyable.</p>
+</div>
+
+<!-- Section 2 -->
+<div class="abt-container abt-container1">
+    <div class="abt-imgleft">
+        <img src="https://di-uploads-pod23.dealerinspire.com/performanceautomotivenetwork/uploads/2026/01/PA-Preview-Image-01.jpg" alt="Performance Lexus Northern Kentucky team" style="border-radius: 12px; width: 100%; display: block;">
+    </div>
+    <div class="abt-contentright">
+        <h3>Who We Are at Performance Lexus Northern Kentucky</h3>
+        <p>Performance Lexus Northern Kentucky is proud to be part of the Performance Automotive Network, a family-owned organization built on one promise: <strong>“We’ll put a smile on your face — Every customer. Every vehicle. Every day.”</strong>
+        <br><br>
+        That promise guides how we treat customers, support our community, and work together as a team. We deliver on it by listening to your needs, investing in training and technology, and empowering our staff to create a convenient, rewarding experience from the showroom to the service drive.</p>
+    </div>
+</div>
+<div class="abt-container abt-container2">
+    <div class="abt-imgright">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iB0brEIEdn8?si=CIOdYR8hm1osNURP" title="Performance Automotive Network video" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="abt-contentleft">
+        <h3>Our <span style="color:#555;">Mission</span></h3>
+        <p>We listen to our customers and respond to their evolving needs. Through training, technology, and empowered employees, we aim for the highest level of satisfaction — every customer, every vehicle, every day.</p>
+    </div>
+</div>
+
+<!-- Section 3 -->
+<div class="abt-container abt-stores-section">
+    <h3>Everything You Need, All in One Place</h3>
+    <p style="text-align: center; margin-bottom: 2rem;">From shopping and financing to service and parts, we're here for every step of vehicle ownership.</p>
+    <div class="abt-cards">
+        <div class="abt-card1">
+            <h5>New Lexus Vehicles</h5>
+            <p>Explore the latest Lexus lineup including the RX, NX, ES, GX, LX, and more — luxury SUVs, sedans, and hybrids designed for comfort, technology, and reliability.</p>
+        </div>
+        <div class="abt-card2">
+            <h5>Lexus Certified & Pre-Owned Vehicles</h5>
+            <p>Browse carefully inspected Lexus Certified Pre-Owned and pre-owned inventory updated daily, or use our Vehicle Finder tool and we’ll alert you when the right vehicle arrives.</p>
+        </div>
+        <div class="abt-card3">
+            <h5>Sales, Trade-In & Financing Tools</h5>
+            <p>Use online pricing tools, trade-in valuation, and credit pre-approval to streamline your purchase before you even arrive.</p>
+        </div>
+        <div class="abt-card4">
+            <h5>Luxury Service Experience</h5>
+            <p>From professional Lexus-certified technicians to a premium guest lounge and available loaner vehicles, we ensure your maintenance experience is as refined and seamless as the vehicle you drive.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Section 4 -->
+<div class="abt-container abt-stores-section abt-section4">
+    <div class="abt-content">
+        <h3>The Lexus Experience at Performance Lexus Northern Kentucky</h3>
+        <p>Performance Lexus Northern Kentucky is your destination for <strong>new and pre-owned Lexus vehicles, certified service, and genuine parts</strong>. Located at 709 Wright's Summit Pkwy in Fort Wright, KY, we're committed to the same standard of care and quality that defines the Lexus brand — from luxury sedans and SUVs to hybrids and electrified vehicles.</p>
+        <div class="abt-lexus-features">
+            <div class="abt-lexus-feature">
+                <h4>Lexus Certified Pre-Owned</h4>
+                <p>Shop with confidence with our Lexus Certified Pre-Owned program — multi-point inspections, warranty coverage, and quality you can trust.</p>
+            </div>
+            <div class="abt-lexus-feature">
+                <h4>Expert Lexus Service</h4>
+                <p>Our factory-trained technicians use genuine Lexus parts and the latest technology to keep your Lexus performing at its best.</p>
+            </div>
+            <div class="abt-lexus-feature">
+                <h4>Customer-First Approach</h4>
+                <p>We focus on your needs — no high-pressure tactics. Just expert advice on the right Lexus model, financing, and service options for you.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Section 5 -->
+<div class="abt-container abt-container3">
+    <h3>Why Drivers Across Cincinnati and Northern Kentucky Choose Performance Lexus Northern Kentucky</h3>
+    <p style="text-align: center; margin-bottom: 2rem;">Choosing a dealership is about more than inventory — it’s about trust, experience, and knowing you’ll be taken care of long after the sale.</p>
+    <div class="abt-cards">
+        <div class="abt-card1">
+            <h5>Family-Owned Values</h5>
+            <p>As part of the Performance Automotive Network, we operate with long-term commitment, integrity, and a customer-first mindset built over decades.</p>
+        </div>
+
+        <div class="abt-card2">
+            <h5>Proven Track Record</h5>
+            <p>With generally positive customer reviews highlighting our professional sales teams and efficient service, we're committed to excellence in every interaction.</p>
+        </div>
+
+        <div class="abt-card3">
+            <h5>Convenient Fort Wright Location</h5>
+            <p>Conveniently located at 709 Wright's Summit Pkwy in Fort Wright, KY, we're easy to reach from Covington, Florence, Cincinnati, and throughout Northern Kentucky.</p>
+        </div>
+    </div>
+</div>
+
+<!-- About PAN -->
+<div class="abt-container abt-corporate-section">
+    <h2>About Performance Automotive Network</h2>
+    <p>Performance Automotive Network is a family-owned automotive dealership group headquartered in Cincinnati, Ohio. With more than five decades of experience, we operate multiple franchise dealerships throughout Greater Cincinnati and Northern Kentucky, along with additional franchise locations in Columbus, Ohio and the Greater Salt Lake City, Utah area.
+    <br><br>
+    Our network represents a broad portfolio of leading automotive brands and includes new and used vehicle sales, full-service maintenance and repair centers, parts departments, state-of-the-art collision repair facilities, and a dedicated MotorSports division.</p>
+    <hr>
+    <h5>Why Choose Performance Automotive Network?</h5>
+    <div class="abt-why-pan-features">
+        <ul>
+            <li>Family-owned and operated for over 50 years</li>
+            <li>Headquartered in Cincinnati, Ohio</li>
+            <li>Multiple franchise dealerships across three key markets</li>
+            <li>Top 50 automotive dealership group in the U.S.</li>
+        </ul>
+        <ul>
+            <li>Extensive selection of major automotive brands</li>
+            <li>Certified service technicians and OEM parts</li>
+            <li>Collision repair and MotorSports divisions</li>
+            <li>Convenient online shopping and service tools</li>
+        </ul>
+    </div>
+    <hr>
+    <h5>What This Means for You</h5>
+    <p>Choosing Performance Automotive Network means working with a dealership group that combines the personal approach of a family-owned business with the scale, resources, and expertise of a nationally recognized organization. Whether you shop online or visit one of our dealerships, you can expect professionalism, transparency, and a commitment to putting customers first.</p>
+</div>
+
+
+<!-- Section 7 -->
+<div class="abt-container abt-container1">
+    <div class="abt-imgleft">
+        <img src="https://placehold.co/600x400" alt="Performance Lexus Northern Kentucky team" style="border-radius: 12px; width: 100%; display: block;">
+    </div>
+    <div class="abt-contentright">
+        <h3>Join the Performance Team</h3>
+        <p>We're always looking for motivated professionals to join our growing team. As part of the Performance Automotive Network, we offer career opportunities across sales, service, parts, and management throughout the Cincinnati and Northern Kentucky region.</p>
+        <div class="abt-jobbuttons">
+            <a class="button btn" href="/job-postings/">Explore Current Job Openings</a>
+        </div>
+    </div>
+</div>
+
+<!-- Section 8 -->
+<div class="abt-container abt-container5">
+    <h3>Frequently Asked Questions</h3>
+    <div class="abt-faq1">
+        <h4>What makes Performance Lexus Northern Kentucky different from other dealerships?</h4>
+        <p>We combine the personal service of a local dealership with the resources of the Performance Automotive Network — a family-owned group with decades of experience and recognition as a top 50 dealership group nationally. That means better support, better tools, and a better overall experience.</p>
+    </div>
+    <div class="abt-faq2">
+        <h4>Can I start the buying process online?</h4>
+        <p>Yes. You can browse inventory, value your trade, apply for financing, and even begin your purchase from home using our online tools before visiting the dealership.</p>
+    </div>
+    <div class="abt-faq3">
+        <h4>What if I don’t see the vehicle I want in stock?</h4>
+        <p>Use our Vehicle Finder tool and we’ll notify you as soon as a matching vehicle arrives. Our inventory updates daily, and we’re happy to help locate exactly what you’re looking for.</p>
+    </div>
+    <div class="abt-faq4">
+        <h4>Do you service all vehicles?</h4>
+        <p>Absolutely. Our facility is equipped to service Lexus vehicles with factory-trained technicians and genuine Lexus parts, so your Lexus receives the care it was designed for.</p>
+    </div>
+    <div class="abt-faq5">
+        <h4>What areas do you serve?</h4>
+        <p>We serve Fort Wright, Northern Kentucky, and the greater Cincinnati area. Our dealership at 709 Wright's Summit Pkwy, Fort Wright, KY 41011 is easy to reach, and we offer online shopping and service tools plus a wide range of new and pre-owned Lexus vehicles.</p>
+    </div>
+</div>
+
+<!-- Section 9 -->
+<div class="abt-container abt-container6">
+    <div class="abt-contactbuttons">
+        <a class="button btn" href="/service/"><h4>Schedule Service</h4></a>
+        <a class="button btn" href="/new-vehicles/"><h4>Shop New Vehicles</h4></a>
+        <a class="button btn" href="/used-vehicles/"><h4>Shop Used Vehicles</h4></a>
+    </div>
+    <div style="text-align: center; margin: 1.5rem 0; line-height: 1.8;">
+        <p><strong>📍 709 Wright's Summit Pkwy, Fort Wright, KY 41011</strong></p>
+        <p><strong>📞 (859) 547-5300</strong></p>
+        <p>Sales: Mon–Thu 9AM–8PM | Fri–Sat 9AM–6PM | Sun Closed</p>
+        <p>Service: Mon–Fri 7:00AM–6:00PM | Sat 8AM–3PM | Sun Closed</p>
+    </div>
+    <div class="abt-map">
+        [display_google_map]
+    </div>
+</div>
+
+<script>
+// FAQ Accordion Functionality
+document.addEventListener('DOMContentLoaded', function() {
+        // Remove empty <p> tags within PLN about page only
+        const allParagraphs = document.querySelectorAll('.abt-container p');
+            allParagraphs.forEach(function(p) {
+            // Check if paragraph is empty (no text content, only whitespace, or only HTML entities/whitespace)
+            const textContent = p.textContent.trim();
+            const innerHTML = p.innerHTML.trim();
+            
+            // Remove if empty or only contains whitespace/nbsp
+            if (!textContent || innerHTML === '' || innerHTML === '&nbsp;' || innerHTML === '\u00A0') {
+                p.remove();
+            }
+        });
+
+        const faqItems = document.querySelectorAll('.abt-faq1, .abt-faq2, .abt-faq3, .abt-faq4, .abt-faq5');
+        
+        faqItems.forEach(function(faqItem) {
+            const faqHeader = faqItem.querySelector('h4');
+            
+            faqHeader.addEventListener('click', function() {
+                // Toggle active class on clicked item
+                faqItem.classList.toggle('abt-active');
+                
+                faqItems.forEach(function(otherItem) {
+                    if (otherItem !== faqItem) {
+                        otherItem.classList.remove('abt-active');
+                    }
+                });
+            });
+        });
+
+        // Store Modal Functionality
+        const storeCards = document.querySelectorAll('.abt-store-card');
+        const storeModals = document.querySelectorAll('.abt-store-modal');
+        const closeButtons = document.querySelectorAll('.abt-modal-close');
+
+        // Open modal when store card is clicked
+        storeCards.forEach(function(card) {
+            card.addEventListener('click', function(e) {
+                const storeNumber = card.getAttribute('data-store');
+                if (!storeNumber) return; // Card has direct link, no modal — allow default navigation
+                e.preventDefault(); // Prevent default for modal cards
+                const modal = document.getElementById('storeModal' + storeNumber);
+                if (modal) {
+                    modal.classList.add('abt-active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                } else {
+                    console.warn('Modal not found: storeModal' + storeNumber);
+                }
+            });
+        });
+
+        // Close modal when close button is clicked
+        closeButtons.forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent event from bubbling
+                const modal = button.closest('.abt-store-modal');
+                if (modal) {
+                    modal.classList.remove('abt-active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+        });
+
+        // Close modal when clicking outside the modal content
+        storeModals.forEach(function(modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('abt-active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                storeModals.forEach(function(modal) {
+                    if (modal.classList.contains('abt-active')) {
+                        modal.classList.remove('abt-active');
+                        document.body.style.overflow = ''; // Restore scrolling
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+<!-- STRUCTURED DATA (JSON-LD Schema) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Article",
+  "headline": "About Performance Lexus Northern Kentucky",
+  "description": "About Performance Lexus Northern Kentucky, a family-owned and operated dealership located in Fort Wright, KY. We offer a wide range of new and used vehicles, as well as service and parts.",
+  "author": {
+    "@type": "Organization",
+    "name": "Performance Lexus Northern Kentucky"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Performance Lexus Northern Kentucky",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://di-uploads-pod23.dealerinspire.com/performancelexusrivercenter/uploads/2024/04/renditionDownload.png"
+    }
+  },
+  "datePublished": "2026-02-06",
+  "dateModified": "2026-02-06",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.performancelexusnky.com/about-us/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://di-uploads-pod23.dealerinspire.com/performancelexusrivercenter/uploads/2024/04/renditionDownload.png",
+    "width": 1200,
+    "height": 630
+  }
+}
+</script>
+
+<!-- ADDITIONAL STRUCTURED DATA: LocalBusiness (enhances local SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "Performance Lexus Northern Kentucky",
+  "image": "https://di-uploads-pod23.dealerinspire.com/performancelexusrivercenter/uploads/2024/04/renditionDownload.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fort Wright",
+    "streetAddress": "709 Wright's Summit Pkwy",
+    "addressRegion": "KY",
+    "postalCode": "41011",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "39.0458",
+    "longitude": "-84.5123"
+  },
+  "url": "https://www.performancelexusnky.com",
+  "priceRange": "Call for pricing"
+}
+</script>
