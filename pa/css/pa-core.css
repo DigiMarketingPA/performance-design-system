@@ -1,0 +1,195 @@
+/* pa-core.css — Tier 1. Brands override tokens on .pa-root. */
+
+.pa-root {
+  --pa-primary: #111111;
+  --pa-primary-hover: #333333;
+  --pa-button: var(--pa-primary);
+  --pa-button-hover: var(--pa-primary-hover);
+  --pa-button-text: #ffffff;
+  --pa-secondary: #f5f5f5;
+  --pa-secondary-text: #111111;
+  --pa-outline: var(--pa-primary);
+  --pa-text: inherit;
+  --pa-muted: rgba(0, 0, 0, 0.55);
+  --pa-surface: #ffffff;
+  --pa-surface-alt: #f8fafc;
+  --pa-card-bg: #ffffff;
+  --pa-border: #e2e8f0;
+  --pa-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --pa-radius: 0.75rem;
+  --pa-container: 87.5rem;
+  --pa-gutter: 1.25rem;
+  --pa-gap: 1.5rem;
+  --pa-font: inherit;
+  --pa-leading: 1.5;
+  --pa-lead-size: 1.05rem;
+  --pa-btn-py: 0.75rem;
+  --pa-btn-px: 1.5rem;
+  --pa-btn-min-h: 3rem;
+  --pa-btn-size: 0.875rem;
+  --pa-btn-weight: 700;
+  box-sizing: border-box;
+  font-family: var(--pa-font);
+  color: var(--pa-text);
+  line-height: var(--pa-leading);
+}
+
+.pa-root *,
+.pa-root *::before,
+.pa-root *::after { box-sizing: border-box; }
+
+.pa-root img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pa-container {
+  width: 100%;
+  max-width: var(--pa-container);
+  margin-inline: auto;
+  padding-inline: var(--pa-gutter);
+}
+
+.pa-row {
+  display: grid;
+  gap: var(--pa-gap);
+  align-items: stretch;
+  grid-template-columns: 1fr;
+}
+
+.pa-row--1,
+.pa-row--2,
+.pa-row--3,
+.pa-row--4 { grid-template-columns: 1fr; }
+
+@media (min-width: 36rem) {
+  .pa-row--4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 48rem) {
+  .pa-row--2 { grid-template-columns: repeat(2, 1fr); }
+  .pa-row--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 62rem) {
+  .pa-row--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+.pa-root h1,
+.pa-root h2,
+.pa-root h3,
+.pa-root h4 {
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: inherit;
+}
+
+.pa-lead {
+  margin: 0 0 1.25rem;
+  font-size: var(--pa-lead-size);
+  line-height: var(--pa-leading);
+}
+
+.pa-muted {
+  margin: 0;
+  color: var(--pa-muted);
+}
+
+.pa-center { text-align: center; }
+
+/* --- Cards --------------------------------------------------------------- */
+
+.pa-root .pa-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--pa-card-bg);
+  border: 0.0625rem solid var(--pa-border);
+  border-radius: var(--pa-radius);
+  box-shadow: var(--pa-shadow);
+  overflow: hidden;
+}
+
+.pa-root .pa-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex: 1;
+}
+
+/* --- Buttons ------------------------------------------------------------- */
+
+.pa-root .pa-btn,
+.pa-root a.pa-btn,
+.pa-root button.pa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: var(--pa-btn-py) var(--pa-btn-px);
+  min-height: var(--pa-btn-min-h);
+  font: inherit;
+  font-size: var(--pa-btn-size);
+  font-weight: var(--pa-btn-weight);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none !important;
+  border-radius: var(--pa-radius);
+  border: 0.125rem solid transparent;
+  cursor: pointer;
+}
+
+.pa-root .pa-btn.pa-btn--primary,
+.pa-root a.pa-btn.pa-btn--primary,
+.pa-root button.pa-btn.pa-btn--primary {
+  background: var(--pa-button);
+  border-color: var(--pa-button);
+  color: var(--pa-button-text);
+}
+.pa-root .pa-btn.pa-btn--primary:hover,
+.pa-root .pa-btn.pa-btn--primary:focus,
+.pa-root a.pa-btn.pa-btn--primary:hover,
+.pa-root a.pa-btn.pa-btn--primary:focus,
+.pa-root button.pa-btn.pa-btn--primary:hover,
+.pa-root button.pa-btn.pa-btn--primary:focus {
+  background: var(--pa-button-hover);
+  border-color: var(--pa-button-hover);
+  color: var(--pa-button-text);
+}
+.pa-root .pa-btn.pa-btn--secondary,
+.pa-root a.pa-btn.pa-btn--secondary,
+.pa-root button.pa-btn.pa-btn--secondary {
+  background: var(--pa-secondary);
+  border-color: var(--pa-secondary);
+  color: var(--pa-secondary-text);
+}
+.pa-root .pa-btn.pa-btn--secondary:hover,
+.pa-root .pa-btn.pa-btn--secondary:focus,
+.pa-root a.pa-btn.pa-btn--secondary:hover,
+.pa-root a.pa-btn.pa-btn--secondary:focus,
+.pa-root button.pa-btn.pa-btn--secondary:hover,
+.pa-root button.pa-btn.pa-btn--secondary:focus {
+  background: var(--pa-primary-hover);
+  border-color: var(--pa-primary-hover);
+  color: var(--pa-button-text);
+}
+.pa-root .pa-btn.pa-btn--outline,
+.pa-root a.pa-btn.pa-btn--outline,
+.pa-root button.pa-btn.pa-btn--outline {
+  background: transparent;
+  border-color: var(--pa-outline);
+  color: var(--pa-outline);
+}
+.pa-root .pa-btn.pa-btn--outline:hover,
+.pa-root .pa-btn.pa-btn--outline:focus,
+.pa-root a.pa-btn.pa-btn--outline:hover,
+.pa-root a.pa-btn.pa-btn--outline:focus,
+.pa-root button.pa-btn.pa-btn--outline:hover,
+.pa-root button.pa-btn.pa-btn--outline:focus {
+  background: var(--pa-button);
+  border-color: var(--pa-button);
+  color: var(--pa-button-text);
+}
