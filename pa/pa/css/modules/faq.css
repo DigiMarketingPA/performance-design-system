@@ -1,0 +1,79 @@
+/* faq.css — Tier 3 module. Load after pa-core.css + brand sheet. */
+
+.pa-root .pa-faq {
+  max-width: 50rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pa-root .pa-faq-item {
+  margin: 0;
+  background: var(--pa-surface);
+  border: 0.0625rem solid var(--pa-border);
+  border-radius: var(--pa-radius);
+  overflow: hidden;
+}
+
+.pa-root .pa-faq-q {
+  display: block;
+  margin: 0;
+  padding: 1rem 3rem 1rem 1rem;
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: inherit;
+  background: var(--pa-surface);
+}
+
+.pa-root .pa-faq-q::-webkit-details-marker {
+  display: none !important;
+}
+
+.pa-root .pa-faq-q::marker {
+  content: "";
+}
+
+.pa-root .pa-faq-q::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--pa-primary);
+}
+
+.pa-root .pa-faq-item[open] > .pa-faq-q::after {
+  content: "–";
+}
+
+.pa-root .pa-faq-q:hover {
+  background: var(--pa-surface-alt);
+}
+
+.pa-root .pa-faq-q:focus-visible {
+  outline: 0.125rem solid var(--pa-primary);
+  outline-offset: -0.125rem;
+}
+
+.pa-root .pa-faq-a {
+  margin: 0;
+  padding: 0 1rem 1rem;
+  color: inherit;
+  line-height: var(--pa-leading, 1.5);
+}
+
+.pa-root .pa-faq-a > :first-child {
+  margin-top: 0;
+}
+
+.pa-root .pa-faq-a > :last-child {
+  margin-bottom: 0;
+}

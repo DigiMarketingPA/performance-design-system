@@ -1,0 +1,7 @@
+# Performance Automotive Design System (.cursorrules)
+
+- **Prefix Enforcement**: ALWAYS prefix custom CSS classes with `.pa-`. Never use `.tpl-`, `.ds-`, or un-prefixed generic classes.
+- **Root Container**: Wrap all generated HTML snippets inside `<div class="pa-root">...</div>`.
+- **CSS Variables Only**: Use CSS variables (`var(--pa-primary)`, `var(--pa-space-md)`, `var(--pa-radius)`) for styling. Never write hardcoded hex codes, inline CSS, or one-off utility classes.
+- **No Third-Party Overrides in Core**: Keep `pa-core.css` clean. Do not put page-specific widget overrides (like inventory shortcodes or dealership maps) into the core sheet. Put them in `/modules/`.
+- **Component Consistency**: When creating new HTML components, use standard primitives: `.pa-container`, `.pa-row`, `.pa-card`, and `.pa-btn`.
