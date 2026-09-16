@@ -154,6 +154,14 @@ Load **exactly one** brand sheet per site/rooftop.
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/meet-team.css">
 ```
 
+### Meet the team (DI staff shortcode)
+
+Temporary — omit after leaving Dealer Inspire.
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/meet-team-di.css">
+```
+
 ### Promo (trade-in / finance)
 
 ```html
@@ -322,6 +330,7 @@ Requires only core + brand (no feature module).
 | `snippets/map-cta.html` | `map-cta.css` |
 | `snippets/form-cta.html` | `form-cta.css` |
 | `snippets/meet-team.html` | `meet-team.css` |
+| `snippets/meet-team-di.html` | `meet-team-di.css` (DI `[staff]` only) |
 | `snippets/trade-in.html` | `promo.css` |
 | `snippets/finance.html` | `promo.css` |
 | `snippets/page-header.html` | `page-header.css` |
