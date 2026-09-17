@@ -142,6 +142,12 @@ Load **exactly one** brand sheet per site/rooftop.
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/map-cta.css">
 ```
 
+### Video
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/video.css">
+```
+
 ### Form CTA
 
 ```html
@@ -328,6 +334,7 @@ Requires only core + brand (no feature module).
 | `snippets/cta-row.html` | `cta-row.css` |
 | `snippets/hours.html` | `hours.css` |
 | `snippets/map-cta.html` | `map-cta.css` |
+| `snippets/video.html` | `video.css` |
 | `snippets/form-cta.html` | `form-cta.css` |
 | `snippets/meet-team.html` | `meet-team.css` |
 | `snippets/meet-team-di.html` | `meet-team-di.css` (DI `[staff]` only) |
