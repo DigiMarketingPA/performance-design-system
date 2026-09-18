@@ -1,0 +1,16 @@
+{
+  "name": "Performance Automotive Design System",
+  "terminals": [
+    {
+      "name": "static-server",
+      "command": "python3 -m http.server 8000 --bind 0.0.0.0",
+      "description": "Serves the repo root over HTTP. Open the preview catalog at http://localhost:8000/preview/ to view every pa- snippet rendered with the live core, brand, and module stylesheets."
+    }
+  ],
+  "ports": [
+    {
+      "name": "preview",
+      "port": 8000
+    }
+  ]
+}
