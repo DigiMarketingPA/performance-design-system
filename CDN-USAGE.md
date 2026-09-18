@@ -96,6 +96,8 @@ Load **exactly one** brand sheet per site/rooftop.
 
 ### Hero
 
+Split (`hero.html`), full-width image (`hero-banner.html`), and background video (`hero-video.html`).
+
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/hero.css">
 ```
@@ -326,7 +328,9 @@ Requires only core + brand (no feature module).
 | Snippet file | Module CSS required (besides core + brand) |
 |---|---|
 | `snippets/faq.html` | `faq.css` |
-| `snippets/hero.html` | `hero.css` |
+| `snippets/hero.html` | `hero.css` (split) |
+| `snippets/hero-banner.html` | `hero.css` (full-width image) |
+| `snippets/hero-video.html` | `hero.css` (background video) |
 | `snippets/location-cards.html` | `location-cards.css` |
 | `snippets/deal-carousel.html` | `deal-carousel.css` |
 | `snippets/coupons.html` | `coupons.css` |
