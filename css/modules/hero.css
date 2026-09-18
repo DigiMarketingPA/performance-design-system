@@ -74,3 +74,134 @@
     flex-direction: column-reverse;
   }
 }
+
+/* --- Full-width image + video overlays ----------------------------------- */
+
+.pa-root .pa-hero--banner,
+.pa-root .pa-hero--video {
+  --pa-hero-scrim: rgba(0, 0, 0, 0.58);
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(22rem, 68vw, 36rem);
+  padding-block: 0;
+  overflow: hidden;
+  background: #111111;
+}
+
+.pa-root .pa-hero--banner .pa-hero-media,
+.pa-root .pa-hero--video .pa-hero-media {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.pa-root .pa-hero--banner .pa-hero-media img,
+.pa-root .pa-hero--video .pa-hero-media img,
+.pa-root .pa-hero--video .pa-hero-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: auto;
+}
+
+.pa-root .pa-hero--video .pa-hero-fallback {
+  display: block;
+}
+
+.pa-root .pa-hero--video .pa-hero-media video {
+  display: none;
+  pointer-events: none;
+}
+
+.pa-root .pa-hero--video .pa-hero-media:has(source[src]:not([src=""])) video {
+  display: block;
+}
+
+.pa-root .pa-hero--video .pa-hero-media:has(source[src]:not([src=""])) .pa-hero-fallback {
+  display: none;
+}
+
+.pa-root .pa-hero--banner::after,
+.pa-root .pa-hero--video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--pa-hero-scrim) 0%, rgba(0, 0, 0, 0.28) 55%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.pa-root .pa-hero--banner .pa-container,
+.pa-root .pa-hero--video .pa-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.pa-root .pa-hero--banner .pa-hero-copy,
+.pa-root .pa-hero--video .pa-hero-copy {
+  max-width: 40rem;
+  padding-block: 2.5rem;
+  color: var(--pa-button-text);
+}
+
+.pa-root .pa-hero--banner .pa-hero-title,
+.pa-root .pa-hero--video .pa-hero-title,
+.pa-root .pa-hero--banner .pa-hero-lead,
+.pa-root .pa-hero--video .pa-hero-lead {
+  color: var(--pa-button-text);
+}
+
+.pa-root .pa-hero--banner .pa-btn.pa-btn--outline,
+.pa-root .pa-hero--banner a.pa-btn.pa-btn--outline,
+.pa-root .pa-hero--video .pa-btn.pa-btn--outline,
+.pa-root .pa-hero--video a.pa-btn.pa-btn--outline {
+  border-color: var(--pa-button-text);
+  color: var(--pa-button-text);
+}
+
+.pa-root .pa-hero--banner .pa-btn.pa-btn--outline:hover,
+.pa-root .pa-hero--banner .pa-btn.pa-btn--outline:focus,
+.pa-root .pa-hero--banner a.pa-btn.pa-btn--outline:hover,
+.pa-root .pa-hero--banner a.pa-btn.pa-btn--outline:focus,
+.pa-root .pa-hero--video .pa-btn.pa-btn--outline:hover,
+.pa-root .pa-hero--video .pa-btn.pa-btn--outline:focus,
+.pa-root .pa-hero--video a.pa-btn.pa-btn--outline:hover,
+.pa-root .pa-hero--video a.pa-btn.pa-btn--outline:focus {
+  background: var(--pa-button-text);
+  border-color: var(--pa-button-text);
+  color: var(--pa-primary);
+}
+
+@media (max-width: 47.9375rem) {
+  .pa-root .pa-hero--banner,
+  .pa-root .pa-hero--video {
+    align-items: flex-end;
+    min-height: 24rem;
+  }
+
+  .pa-root .pa-hero--banner::after,
+  .pa-root .pa-hero--video::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, var(--pa-hero-scrim) 62%);
+  }
+
+  .pa-root .pa-hero--banner .pa-hero-copy,
+  .pa-root .pa-hero--video .pa-hero-copy {
+    padding-block: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pa-root .pa-hero--video .pa-hero-media video,
+  .pa-root .pa-hero--video .pa-hero-media:has(source[src]:not([src=""])) video {
+    display: none;
+  }
+
+  .pa-root .pa-hero--video .pa-hero-fallback,
+  .pa-root .pa-hero--video .pa-hero-media:has(source[src]:not([src=""])) .pa-hero-fallback {
+    display: block;
+  }
+}
