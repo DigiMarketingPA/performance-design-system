@@ -1,0 +1,26 @@
+<!-- Hero (video)
+     Requires: css/pa-core.css + css/brands/pa-brand-{oem}.css + css/modules/hero.css
+     Overlay copy on a muted looping background video.
+     Live: set <source src> and matching poster / .pa-hero-fallback image.
+     YouTube embeds belong in snippets/video.html, not as a background. -->
+<div class="pa-root">
+  <section class="pa-hero pa-hero--video">
+    <div class="pa-hero-media">
+      <img class="pa-hero-fallback" src="https://placehold.co/1600x900/1a1a1a/e2e8f0?text=Hero+Video" alt="" width="1600" height="900">
+      <video autoplay muted loop playsinline poster="https://placehold.co/1600x900/1a1a1a/e2e8f0?text=Hero+Video">
+        <source src="" type="video/mp4">
+      </video>
+    </div>
+    <div class="pa-container">
+      <div class="pa-hero-copy">
+        <h1 class="pa-hero-title">Lorem Ipsum Dolor Sit Amet</h1>
+        <hr class="pa-hero-accent" aria-hidden="true">
+        <p class="pa-hero-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="pa-hero-actions">
+          <a class="pa-btn pa-btn--primary" href="#">Shop New Vehicles</a>
+          <a class="pa-btn pa-btn--outline" href="#">Schedule Service</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
