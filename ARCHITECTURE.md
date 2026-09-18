@@ -113,9 +113,6 @@ pa/
 │
 ├── snippets/                       ← (later) paste-ready HTML (Composer)
 │   └── …                           ← each wrapped in .pa-root
-│
-└── preview/                        ← (later) local catalog only
-    └── index.html
 ```
 
 > **Note:** Folders other than this architecture doc are **not created yet**. The tree above is the target shape once implementation begins.

@@ -4,12 +4,12 @@
     {
       "name": "static-server",
       "command": "python3 -m http.server 8000 --bind 0.0.0.0",
-      "description": "Serves the repo root over HTTP. Open the preview catalog at http://localhost:8000/preview/ to view every pa- snippet rendered with the live core, brand, and module stylesheets."
+      "description": "Serves the repo root over HTTP."
     }
   ],
   "ports": [
     {
-      "name": "preview",
+      "name": "static",
       "port": 8000
     }
   ]
