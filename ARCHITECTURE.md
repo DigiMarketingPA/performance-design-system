@@ -13,7 +13,7 @@
 2. **Lightweight** — no framework bloat; small shared sheets + opt-in modules.
 3. **Token-driven** — colors, radii, spacing, type, and shadows live as CSS variables. Component CSS never hardcodes brand values.
 4. **Isolated** — every snippet wraps in `.pa-root` so DI / Composer chrome is not restyled.
-5. **CDN-ready** — flat, versionable file layout suitable for `https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/...`
+5. **CDN-ready** — flat, versionable file layout suitable for `https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/...`
 
 ---
 
@@ -130,10 +130,10 @@ Always load in this order:
 **Example (jsDelivr, after the repo exists):**
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/pa-core.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/brands/pa-brand-toyota.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/pa-core.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/brands/pa-brand-toyota.css">
 <!-- Optional modules -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/faq.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/faq.css">
 ```
 
 Until the GitHub repo + CDN are live, the same files can be pasted as `<style>` blocks into DI Head/Header in the same order.

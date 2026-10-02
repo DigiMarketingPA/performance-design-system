@@ -6,23 +6,17 @@ How to load the `pa-` CSS system from GitHub via **jsDelivr**, and how to embed 
 
 ## Prerequisites
 
-1. Publish this design system as a **public GitHub repository** (or a public path within an org repo).
-2. Prefer a **git tag** (e.g. `v1.0.0`) in CDN URLs so production does not float on `main`.
-3. Replace placeholders below:
+1. CSS lives in the public **`performanceautomotive/stylesheets`** repo so dealer sites can load it.
+2. HTML snippets live in the private **`performanceautomotive/Templates`** repo for in-house use.
+3. Prefer a **git tag** (e.g. `v1.0.0`) in CDN URLs so production does not float on `main`. Current Head links use `@main`.
 
-| Placeholder | Meaning | Example |
-|---|---|---|
-| `{org}` | GitHub org or user | `performance-auto` |
-| `{repo}` | Repository name | `pa-design-system` |
-| `{tag}` | Release tag or commit | `v1.0.0` |
-
-**Base URL pattern:**
+**Base URL:**
 
 ```text
-https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/
+https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/
 ```
 
-If this package lives in a monorepo subfolder, insert the path after `{tag}/` (e.g. `...@{tag}/pa/css/pa-core.css`). The templates below assume the repo root **is** the `pa/` package root (`css/` at repository root).
+CSS files live at the repository root under `css/` (for example `css/pa-core.css`).
 
 ---
 
@@ -45,7 +39,7 @@ Skipping core, loading a brand before core, or loading modules without core will
 ## Tier 1 — Core
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/pa-core.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/pa-core.css">
 ```
 
 ---
@@ -55,31 +49,31 @@ Skipping core, loading a brand before core, or loading modules without core will
 ### Toyota
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/brands/pa-brand-toyota.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/brands/pa-brand-toyota.css">
 ```
 
 ### Honda
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/brands/pa-brand-honda.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/brands/pa-brand-honda.css">
 ```
 
 ### Lexus
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/brands/pa-brand-lexus.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/brands/pa-brand-lexus.css">
 ```
 
 ### Ford
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/brands/pa-brand-ford.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/brands/pa-brand-ford.css">
 ```
 
 ### CJDR
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/brands/pa-brand-cjdr.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/brands/pa-brand-cjdr.css">
 ```
 
 Load **exactly one** brand sheet per site/rooftop.
@@ -91,7 +85,7 @@ Load **exactly one** brand sheet per site/rooftop.
 ### FAQ
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/faq.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/faq.css">
 ```
 
 ### Hero
@@ -99,67 +93,67 @@ Load **exactly one** brand sheet per site/rooftop.
 Split (`hero.html`), full-width image (`hero-banner.html`), and background video (`hero-video.html`).
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/hero.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/hero.css">
 ```
 
 ### Location cards
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/location-cards.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/location-cards.css">
 ```
 
 ### Deal carousel
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/deal-carousel.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/deal-carousel.css">
 ```
 
 ### Coupons
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/coupons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/coupons.css">
 ```
 
 ### Content + media (50/50)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/content-media.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/content-media.css">
 ```
 
 ### CTA button row
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/cta-row.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/cta-row.css">
 ```
 
 ### Hours (bar + display)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/hours.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/hours.css">
 ```
 
 ### Map + CTAs
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/map-cta.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/map-cta.css">
 ```
 
 ### Video
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/video.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/video.css">
 ```
 
 ### Form CTA
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/form-cta.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/form-cta.css">
 ```
 
 ### Meet the team
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/meet-team.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/meet-team.css">
 ```
 
 ### Meet the team (DI staff shortcode)
@@ -167,25 +161,25 @@ Split (`hero.html`), full-width image (`hero-banner.html`), and background video
 Temporary — omit after leaving Dealer Inspire.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/meet-team-di.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/meet-team-di.css">
 ```
 
 ### Promo (trade-in / finance)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/promo.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/promo.css">
 ```
 
 ### Page header
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/page-header.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/page-header.css">
 ```
 
 ### Store directory
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/store-directory.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/store-directory.css">
 ```
 
 **Store directory JS:** paste raw contents of `js/store-directory.js` once into Footer / Custom JS (no `<script>` tags).
@@ -197,32 +191,32 @@ Temporary — omit after leaving Dealer Inspire.
 ### Toyota rooftop — FAQ + location cards only
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/pa-core.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/brands/pa-brand-toyota.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/faq.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/location-cards.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/pa-core.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/brands/pa-brand-toyota.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/faq.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/location-cards.css">
 ```
 
 ### Honda rooftop — hero + deal carousel + coupons
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/pa-core.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/brands/pa-brand-honda.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/hero.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/deal-carousel.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/coupons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/pa-core.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/brands/pa-brand-honda.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/hero.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/deal-carousel.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/coupons.css">
 ```
 
 ### CJDR rooftop — all modules
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/pa-core.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/brands/pa-brand-cjdr.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/faq.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/hero.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/location-cards.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/deal-carousel.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/{org}/{repo}@{tag}/css/modules/coupons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/pa-core.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/brands/pa-brand-cjdr.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/faq.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/hero.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/location-cards.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/deal-carousel.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/performanceautomotive/stylesheets@main/css/modules/coupons.css">
 ```
 
 ### Dealer Inspire Head / Header
@@ -375,6 +369,6 @@ Requires only core + brand (no feature module).
 3. [ ] Only needed `modules/*.css` linked third  
 4. [ ] Snippet HTML wrapped in `.pa-root`  
 5. [ ] Composer block is raw HTML (classes preserved)  
-6. [ ] CDN URLs use `{org}`, `{repo}`, and a pinned `{tag}`  
+6. [ ] CDN URLs use `performanceautomotive/stylesheets` (pin a tag for production)  
 
 See also: `ARCHITECTURE.md` for the three-tier system rules.
